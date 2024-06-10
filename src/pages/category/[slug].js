@@ -147,7 +147,7 @@ function Category({ category, categories }) {
 // revalidation is enabled and a new request comes in
 export async function getStaticProps({ params }) {
 
-    const res = await fetch(`http://localhost:8000/categories/${params.slug}`)
+    const res = await fetch(`http://173.231.203.186:8083/categories/${params.slug}`)
     const category = await res.json()
     if (category.detail) {
         return {
@@ -172,7 +172,7 @@ export async function getStaticProps({ params }) {
 // It may be called again, on a serverless function, if
 // the path has not been generated.
 export async function getStaticPaths() {
-    const res = await fetch('http://localhost:8000/categories')
+    const res = await fetch('http://173.231.203.186:8083/categories')
     const categories = await res.json()
 
     // Get the paths we want to pre-render based on categories

@@ -7,7 +7,7 @@ export default function CategpryBox() {
 
     const [categories, setFilterdata] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:8000/categories/')
+        axios.get('http://173.231.203.186:8083/categories/')
             .then(function (response) {
                 setFilterdata(response.data);
             })

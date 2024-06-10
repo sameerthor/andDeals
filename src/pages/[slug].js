@@ -299,7 +299,7 @@ function Store({ store, relStores }) {
 // It may be called again, on a serverless function, if
 // revalidation is enabled and a new request comes in
 export async function getStaticProps({ params }) {
-    const res = await fetch('http://localhost:8000/stores/' + params.slug)
+    const res = await fetch('http://173.231.203.186:8083/stores/' + params.slug)
     const store = await res.json()
 
     if (store.detail) {
@@ -330,7 +330,7 @@ export async function getStaticProps({ params }) {
 // It may be called again, on a serverless function, if
 // the path has not been generated.
 export async function getStaticPaths() {
-    const res = await fetch('http://localhost:8000/stores/')
+    const res = await fetch('http://173.231.203.186:8083/stores/')
     const stores = await res.json()
 
     // Get the paths we want to pre-render based on posts
