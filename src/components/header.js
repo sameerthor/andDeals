@@ -73,7 +73,7 @@ export default function Header({ filterdata }) {
 
 }
 export async function getStaticProps({ params }) {
-    const res = await fetch(`http://localhost:8000/stores?ordering=title`)
+    const res = await fetch(`http://173.231.203.186:8083/stores?ordering=title`)
     const stores = await res.json()
     const filterdata = stores.map(item => { return { key: item.slug, value: item.title } })
 
