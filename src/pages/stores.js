@@ -86,7 +86,7 @@ export default function Stores({stores}) {
 
 export async function getStaticProps({ params }) {
 
-    const res = await fetch(`http://173.231.203.186:8083/stores`)
+    const res = await fetch(`http://localhost:8000/stores`)
     const stores = await res.json()
 
     return {

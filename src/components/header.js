@@ -9,7 +9,7 @@ export default function Header() {
 
     const [filterdata, setFilterdata] = useState([]);
     useEffect(() => {
-        process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+        process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
         axios.get('http://localhost:8000/stores/')
             .then(function (response) {
