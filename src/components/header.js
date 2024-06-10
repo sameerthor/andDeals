@@ -1,11 +1,26 @@
+'use client'
 import Link from "next/link";
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import ReactSearchBox from "react-search-box";
 
-export default function Header({ filterdata }) {
+export default function Header() {
 
-  
+    const [filterdata, setFilterdata] = useState([]);
+    useEffect(() => {
+        process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
+
+        axios.get('http://localhost:8000/stores/')
+            .then(function (response) {
+                var d = response.data.map(item => { return { key: item.slug, value: item.title } })
+                setFilterdata(d);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+    }, []);
     return (
         <>
             <nav className="navbar navbar-expand-lg pageHeader">
@@ -71,19 +86,4 @@ export default function Header({ filterdata }) {
         </>
     )
 
-}
-export async function getStaticProps({ params }) {
-    const res = await fetch(`http://173.231.203.186:8083/stores?ordering=title`)
-    const stores = await res.json()
-    const filterdata = stores.map(item => { return { key: item.slug, value: item.title } })
-
-    return {
-        props: {
-            filterdata
-        },
-        // Next.js will attempt to re-generate the page:
-        // - When a request comes in
-        // - At most once every 10 seconds
-        revalidate: 10, // In seconds
-    }
 }
