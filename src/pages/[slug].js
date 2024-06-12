@@ -17,6 +17,7 @@ function Store({ store, relStores }) {
     const store_names = relStores.map(item => `<a href="/${item.slug}">${item.title}</a>`)
     store.store_description = store.store_description.replaceAll("%%storename%%", store.title);
     store.store_description = store.store_description.replaceAll("%pe­rcentage% off", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%pe­rcentage%", store.coupon_set[0].title);
     store.store_description = store.store_description.replace(/XX/, store.coupon_set.length);
     store.store_description = store.store_description.replace(/XXX/, store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 ? store.coupon_set.filter(x => x.coupon_type == 'code')[0].coupon_code : "");
     store.store_description = store.store_description.replaceAll("%%curre­ntmonth%%", moment().format('MMMM'));
