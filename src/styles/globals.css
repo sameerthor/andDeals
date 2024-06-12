@@ -195,7 +195,7 @@ font-family: 'Montserrat', sans-serif;
 }
 .footer .aboutUs{
   font-weight: 500;
-  font-size: .8rem;
+  font-size: .85rem;
   line-height: 1.4;
 }
 .footer h5{
@@ -272,5 +272,16 @@ font-family: 'Montserrat', sans-serif;
   z-index: 999999999999999999999;
     position: fixed;
     color: black;
+    width: 400px;
     top: 7%;
+}
+.navbar.pageHeader input{
+  width: 400px;
+}
+.navbar.pageHeader .hxYWBf{
+ padding-left: .5rem;
+}
+.navbar.pageHeader input::placeholder{
+  font-weight: 500;
+  color: #2e2e2e;
 }

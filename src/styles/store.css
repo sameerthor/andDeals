@@ -225,7 +225,6 @@ body{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 0;
 }
 .storBox .couponItem .couponBox .couponDiscount{
   font-size: 1.6rem;
@@ -516,10 +515,8 @@ transition:  .3s ease;
 
 .storeContent .couponSummary{ 
   border-radius: 3px;
-  /* box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05); */
   background-color: #fff;
   padding: 1.6rem .8rem;
-  /* margin-bottom: 1rem; */
 }
 .storeContent .couponSummary h3{
  font-weight: 600;
@@ -528,6 +525,17 @@ transition:  .3s ease;
  line-height: 1.4;
  margin-bottom: .5rem;
 }
+.storeContent .couponSummary p{
+  font-weight: 500;
+  color: #2e2e2e;
+  font-size: .95rem; 
+  line-height: 1.4;
+  margin-bottom: .5rem;
+ }
+ .storeContent .couponSummary p a{
+  color: #1a0dab;
+  display: inline-block;
+ }
 .storeContent .tableContainer table{
   font-size: 13px;
   font-weight: 500;
@@ -580,9 +588,9 @@ transition:  .3s ease;
 }
 .storeContent .faqs .faq_answer{
   font-weight: 500;
-  font-size: .85rem;
+  font-size: .9rem;
   color: #2e2e2e;
-  letter-spacing: -.5px;
+  letter-spacing: .5px;
   line-height: 1.4;
   margin-bottom: .5rem;
 }
@@ -760,7 +768,6 @@ a.verifiedCoupon span{
   padding: 1rem .5rem;
   /* margin-bottom: 1.2rem;
   margin-top: 1rem; */
-  max-height: 200px;
 }
 .storeContent .storeWidget .widgetHeading{
   font-weight: 600;
@@ -770,12 +777,12 @@ a.verifiedCoupon span{
 }
 .storeContent .storeWidget .topStore ul {
  display: flex;
- flex-direction: column;
- max-height: 100px;
+ flex-direction: row;
  flex-wrap: wrap;
 }
 .storeContent .storeWidget .topStore ul li {
   margin-bottom: .5rem;
+  width: calc(100%/4);
 }
 .storeContent .storeWidget .topStore ul li a{
   color: #2e2e2e;
@@ -786,6 +793,17 @@ a.verifiedCoupon span{
   -webkit-line-clamp: 1;
   overflow: hidden;
   text-decoration: underline;
+}
+@media(max-width: 768px){
+  .storeContent .storeWidget .topStore ul li {
+    width: calc(100%/3);
+  }
+}
+
+@media(max-width: 500px){
+  .storeContent .storeWidget .topStore ul li {
+    width: calc(100%/2);
+  }
 }
 /* subscribe */
 
