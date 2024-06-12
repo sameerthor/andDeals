@@ -273,10 +273,12 @@ font-family: 'Montserrat', sans-serif;
     position: fixed;
     color: black;
     width: 400px;
+    max-width: 100%;
     top: 7%;
 }
 .navbar.pageHeader input{
   width: 400px;
+  max-width: 100%;
 }
 .navbar.pageHeader .hxYWBf{
  padding-left: .5rem;
@@ -284,4 +286,23 @@ font-family: 'Montserrat', sans-serif;
 .navbar.pageHeader input::placeholder{
   font-weight: 500;
   color: #2e2e2e;
+}
+.pageHeader .navbar-toggler{
+  box-shadow: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  fill: #fff;
+}
+.pageHeader .navbar-toggler span{
+  color: #fff;
+}
+
+@media(max-width: 991px){
+  .react-search-box-dropdown{
+      width: 100%;
+  }
+  .navbar.pageHeader input{
+    width: 100%;
+  }
 }
