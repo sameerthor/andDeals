@@ -27,7 +27,13 @@ export default function Coupon({index_id,store_data, coupon_data }) {
             <div className="couponItem" key={index_id}>
                 <div className="couponBox">
                     <div>
-                        <span className="storeName">{store_data.title}</span>
+                        <div className="isverified">
+                            <span className="storeName">{store_data.title} Coupon</span>
+                            <span className="verifiedIcon">
+                                <img src="/images/verified.svg" width={14} height={14}/>
+                                <small>Verified</small>
+                            </span>
+                        </div>
                         <h2 className="couponDiscount">
                             <a href="#">{coupon_data.title!=""?coupon_data.title:"Best Deal"}</a>
                         </h2>

@@ -568,3 +568,6 @@
     letter-spacing: .5px;
     font-size: .85rem;
 }
+.sidebarWidget .verifiedBox p svg{
+   margin-right: .2rem;
+}
