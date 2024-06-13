@@ -1071,7 +1071,6 @@ a.verifiedCoupon span {
 }
 
 /*  */
-<<<<<<< HEAD
 .couponItem .storeName{
 font-weight: 500;
 color: #232323;
@@ -1095,10 +1094,10 @@ font-size: .7rem;
   font-size: .7rem;
   margin-left: .2rem;
  }
-=======
+
 .couponItem .storeName {
   font-weight: 500;
   color: #232323;
   font-size: .8rem;
 }
->>>>>>> f11a60be782aee242d82bfe8302013921ddd77a3
+
