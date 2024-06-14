@@ -12,13 +12,13 @@ import Link from "next/link";
 function Store({ store, relStores }) {
     const [modalOpen, setModalOpen] = useState(false);
 
-    const store_names = relStores.map(item => `<a href="/${item.slug}">${item.title}</a>`)
+    const store_names = relStores.slice(0,2).map(item => `<a href="/${item.slug}">${item.title}</a>`)
     store.store_description = store.store_description.replaceAll("%%storename%%", store.title);
     store.store_description = store.store_description.replaceAll("%pe­rcentage% off", store.coupon_set[0].title);
     store.store_description = store.store_description.replaceAll("%pe­rcentage%", store.coupon_set[0].title);
     store.store_description = store.store_description.replace(/XX/, store.coupon_set.length);
     store.store_description = store.store_description.replace(/XXX/, store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 ? store.coupon_set.filter(x => x.coupon_type == 'code')[0].coupon_code : "");
-    store.store_description = store.store_description.replaceAll("%%curre­ntmonth%%", moment().format('MMMM'));
+    store.store_description = store.store_description.replaceAll("%%currentmonth%%", moment().format('MMMM'));
     store.store_description = store.store_description.replaceAll("%%currentyear%%", moment().format('YYYY'));
     store.store_description = store.store_description.replaceAll(/%%categorystore%% and %%categorystore%%|%categorystore%, %categorystore%|%categorystore% and %categorystore%|%%categorystore%%, %%categorystore%%/gi, store_names.join(","));
     var store_rating = 0;
