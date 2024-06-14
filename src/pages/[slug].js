@@ -149,8 +149,8 @@ function Store({ store, relStores }) {
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
                                         viewBox="0 0 24 24"
-                                        width={16}
-                                        height={16}
+                                        width={12}
+                                        height={12}
                                         stroke="currentColor"
                                     >
                                         <path
@@ -296,9 +296,9 @@ function Store({ store, relStores }) {
                                     <table border="1" cellSpacing="0" cellPadding="0">
                                         <tbody>
                                             <tr>
-                                                <td width="33%" align="center"><strong>Deal</strong></td>
-                                                <td width="33%" align="center"><strong>Title</strong></td>
-                                                <td width="33%" align="center"><strong>Coupon</strong></td>
+                                                <td width="33%"><strong>Deal</strong></td>
+                                                <td width="33%"><strong>Title</strong></td>
+                                                <td width="33%"><strong>Coupon</strong></td>
                                             </tr>
                                             {store.coupon_set.map((item, index) =>
                                                 <tr key={index}>
