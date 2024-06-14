@@ -463,7 +463,6 @@ export async function getStaticProps({ params }) {
             notFound: true
         };
     }
-    store.coupon_set = store.coupon_set.reverse();
     if (store.category[0]) {
         const resRelStores = await fetch(`http://addcoupons.com:8083/stores/?search=${store.category[0].id}&ordering=-id`)
         var relStores = await resRelStores.json()
