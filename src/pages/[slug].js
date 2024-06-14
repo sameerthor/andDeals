@@ -6,23 +6,31 @@ import Coupon from "@/components/coupon";
 import moment from 'moment';
 import { NextSeo } from 'next-seo';
 import dynamic from "next/dynamic";
-const RatingBox = dynamic(() => import('@/components/ratingbox'), 
-{
-   ssr: false,
-});
+import reactStringReplace from 'react-string-replace';
+import ReactHtmlParser from 'react-html-parser';
+import { renderToString } from 'react-dom/server'
+
+const RatingBox = dynamic(() => import('@/components/ratingbox'),
+    {
+        ssr: false,
+    });
 import Link from "next/link";
 
 function Store({ store, relStores }) {
 
-    const store_names = relStores.slice(0,2).map(item => `<a href="/${item.slug}">${item.title}</a>`)
+    const store_names = relStores.slice(0, 2).map(item => `<a href="/${item.slug}">${item.title}</a>`)
     store.store_description = store.store_description.replaceAll("%%storename%%", store.title);
     store.store_description = store.store_description.replaceAll("%pe­rcentage% off", store.coupon_set[0].title);
     store.store_description = store.store_description.replaceAll("%pe­rcentage%", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%percentage%", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%percentage% off", store.coupon_set[0].title);
     store.store_description = store.store_description.replace(/XX/, store.coupon_set.length);
     store.store_description = store.store_description.replace(/XXX/, store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 ? store.coupon_set.filter(x => x.coupon_type == 'code')[0].coupon_code : "");
     store.store_description = store.store_description.replaceAll("%%currentmonth%%", moment().format('MMMM'));
+    store.store_description = store.store_description.replaceAll("%%curre­ntmonth%%", moment().format('MMMM'));
     store.store_description = store.store_description.replaceAll("%%currentyear%%", moment().format('YYYY'));
-    store.store_description = store.store_description.replaceAll(/%%categorystore%% and %%categorystore%%|%categorystore%, %categorystore%|%categorystore% and %categorystore%|%%categorystore%%, %%categorystore%%/gi, store_names.join(","));
+    store.store_description = store.store_description.replaceAll(/%%categorystore%% and %%categorystore%%|%%categorystore%%, %%categorystore%% and %%categorystore%%|%categorystore%, %categorystore%|%categorystore% and %categorystore%|%%categorystore%%, %%categorystore%%/gi, store_names.join(","));
+
     var store_rating = 0;
     var total_ratings = 0;
     if (store.rating.length > 0) {
@@ -37,7 +45,7 @@ function Store({ store, relStores }) {
         "description": store.seo_description,
         "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingCount": total_ratings ,
+            "ratingCount": total_ratings,
             "ratingValue": store_rating,
             "worstRating": 1,
             "bestRating": 5,
@@ -47,7 +55,7 @@ function Store({ store, relStores }) {
                 "image": store.image
             }
         },
-        
+
     }
     return (
         <>
@@ -156,7 +164,7 @@ function Store({ store, relStores }) {
                                         />
                                     </a>
                                 </div>
-                                <RatingBox  key={'store_' + store.id} store={store}/>
+                                <RatingBox key={'store_' + store.id} store={store} />
                             </div>
                         </div>
                     </div>
@@ -177,30 +185,33 @@ function Store({ store, relStores }) {
                             </div>
 
                             <div className="storeContent">
-                                <div className="couponSummary" dangerouslySetInnerHTML={{ __html: store.store_description }}></div>
-                                <div className="offerToday">
-                                    <h3>Today's {store.title} Offer</h3>
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td>🛍️ Total Offers</td>
-                                                <td className="text-right font-medium">{store.coupon_set && store.coupon_set.length}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>🏷️ Active Coupon Codes</td>
-                                                <td className="text-right font-medium">{store.coupon_set.filter(x => x.coupon_type == 'code').length}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>🛒 Free Shipping</td>
-                                                <td className="text-right font-medium">{store.coupon_set.filter(x => x.title.toLowerCase().includes("shipping")).length}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>🔥 Best Offer</td>
-                                                <td className="text-right font-medium">Flat {store.coupon_set && store.coupon_set[0].title}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div className="couponSummary"dangerouslySetInnerHTML={{ __html: reactStringReplace(store.store_description, '[offer-table]', (match, i) => (
+                                            renderToString(<div className="offerToday">
+                                                <h3>Today's {store.title} Offer</h3>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>🛍️ Total Offers</td>
+                                                            <td className="text-right font-medium">{store.coupon_set && store.coupon_set.length}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>🏷️ Active Coupon Codes</td>
+                                                            <td className="text-right font-medium">{store.coupon_set.filter(x => x.coupon_type == 'code').length}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>🛒 Free Shipping</td>
+                                                            <td className="text-right font-medium">{store.coupon_set.filter(x => x.title.toLowerCase().includes("shipping")).length}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>🔥 Best Offer</td>
+                                                            <td className="text-right font-medium">Flat {store.coupon_set && store.coupon_set[0].title}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>)
+                                        )).join("")}} >
                                 </div>
+
                                 <div className="tableContainer">
                                     <table border="1" cellSpacing="0" cellPadding="0">
                                         <tbody>
@@ -309,7 +320,7 @@ function Store({ store, relStores }) {
                     </div>
                 </div>
             </section>
-          
+
         </>
 
     )
@@ -328,7 +339,7 @@ export async function getStaticProps({ params }) {
         };
     }
     if (store.category[0]) {
-        const resRelStores = await fetch(`http://addcoupons.com:8083/stores/?search=${store.category[0].id}&ordering=-id`)
+        const resRelStores = await fetch(`http://173.231.203.186:8083/stores/?category__id=${store.category[0].id}&ordering=-id`)
         var relStores = await resRelStores.json()
     } else {
         var relStores = [];
