@@ -187,15 +187,15 @@ function Store({ store, relStores }) {
                                     <table border="1" cellSpacing="0" cellPadding="0">
                                         <tbody>
                                             <tr>
-                                                <td width="33%"><strong>Deal</strong></td>
-                                                <td width="33%"><strong>Title</strong></td>
-                                                <td width="33%"><strong>Coupon</strong></td>
+                                                <td width="20%"><strong>Deal</strong></td>
+                                                <td width="60%"><strong>Title</strong></td>
+                                                <td width="20%"><strong>Coupon</strong></td>
                                             </tr>
                                             {store.coupon_set.map((item, index) =>
                                                 <tr key={index}>
-                                                    <td>{item.title != "" ? item.title : "Best Deal"}</td>
+                                                    <td>{item.title != "" ? item.title : "Best Deal 👌"}</td>
                                                     <td>{item.content}</td>
-                                                    <td>{item.coupon_type == "code" ? item.coupon_code : "Hot Deal"}</td>
+                                                    <td>{item.coupon_type == "code" ? item.coupon_code : "Hot Deal ️‍🔥"}</td>
                                                 </tr>
                                             )}
                                         </tbody>
