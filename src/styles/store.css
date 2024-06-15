@@ -630,6 +630,7 @@ body {
 
 .storeContent .tableContainer table td {
   padding: 8px;
+  vertical-align: top;
 }
 
 .storeContent .tableContainer table td strong {
