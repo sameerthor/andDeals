@@ -770,6 +770,7 @@ body {
   vertical-align: middle;
   cursor: pointer;
   letter-spacing: .5px;
+  margin: 2px;
 }
 
 .modal .isWorked {
