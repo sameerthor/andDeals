@@ -3,15 +3,17 @@ import { useState } from 'react';
 export default function Coupon({ index_id, store_data, coupon_data }) {
     const [couponShow, setCouponShow] = useState(false);
     const [copyTextShow, setCopyTextShow] = useState(false);
+    const [dealTextShow, setDealTextShow] = useState(false);
 
-    setTimeout(()=>{
+
+    setTimeout(() => {
         if (process.browser) {
             var c_id = localStorage.getItem("copied_code")
             if (c_id) {
                 setCouponShow(true)
             }
             if (c_id == coupon_data.id) {
-                 setCopyTextShow(true);
+                setCopyTextShow(true);
                 setTimeout(() => {
                     localStorage.removeItem("copied_code");
 
@@ -19,8 +21,8 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
 
             }
         }
-    },1000)
-  
+    }, 1000)
+
     return (
         <>
             <div className="couponItem" key={index_id} id={`c=${coupon_data.id}`}>
@@ -60,11 +62,18 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                     </div> : <div className="couponBtn getDeal">
                         <a onClick={(e) => {
                             setCouponShow(true)
-                            window.open(store_data.affiliate_url, "_blank");
+                            setDealTextShow(true)
+                            setTimeout(() => {
+                                setDealTextShow(false)
+                                ; window.open(store_data.affiliate_url, "_blank");
+                            }, 1500)
+
 
                         }} href="#">
                             Get Deal
                         </a>
+                        {dealTextShow && <div className="popover"> Get Deal ✅</div>}
+
                     </div>}
 
 
