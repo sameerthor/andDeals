@@ -312,7 +312,6 @@ font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    border: 1px solid;
     max-height: 90px;
     justify-content: left;
   }

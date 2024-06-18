@@ -15,67 +15,69 @@ export default function Home({ stores }) {
             />
             <section className="homeBanner">
                 <div className="container">
-                    <div className="banner-slider">
-                        <Carousel showThumbs={false} >
-
-                            <div>
+                    <div className="banner-slider carousel-wrapper">
+                        <Carousel showThumbs={false} infiniteLoop={true} showStatus={false}>
+                            <div className="carousel-slide">
                                 <a href="#">
                                     <Image src="/images/banner-1.png" width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
+                                        <span className="sliderName"> Flipkart.com</span>
                                 </a>
-                            </div>
-                            <div>
                                 <a href="#">
                                     <Image src="/images/banner-2.png" width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
+                                        <span className="sliderName"> Amazon.com</span>
                                 </a>
-                            </div>
-                            <div>
                                 <a href="#">
                                     <Image src="/images/banner-3.png" width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
+                                        <span className="sliderName"> Wow skin care</span>
                                 </a>
-                            </div>
-                            <div>
                                 <a href="#">
                                     <Image src="/images/banner-4.png" width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
+                                        <span className="sliderName"> SBI Cards</span>
                                 </a>
                             </div>
-                            <div>
+                            <div className="carousel-slide">
                                 <a href="#">
                                     <Image src="/images/banner-5.png" width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
+                                         <span className="sliderName"> Cleartrip.com</span>
                                 </a>
-                            </div>
-                            <div>
                                 <a href="#">
                                     <Image src="/images/banner-6.png" width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
+                                         <span className="sliderName">Ajio.com</span>
                                 </a>
-                            </div>
-                            <div>
                                 <a href="#">
                                     <Image src="/images/banner-7.png" width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
+                                         <span className="sliderName"> diataal</span>
+                                </a>
+                                <a href="#">
+                                    <Image src="/images/banner-1.png" width={0}
+                                        height={0}
+                                        sizes="100vw"
+                                        style={{ width: '100%', height: 'auto' }} alt="" />
+                                        <span className="sliderName"> Flipkart.com</span>
                                 </a>
                             </div>
                         </Carousel>
-
                     </div>
                 </div>
             </section>

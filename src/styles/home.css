@@ -434,3 +434,30 @@
     font-size: 1.56rem;
     font-weight: 600;
  }
+
+ .carousel-slide{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+ }
+ 
+ .carousel-slide a{
+    width: calc(98%/4);
+    position: relative;
+ }
+ .carousel-slide a img{
+    border-radius: 10px;
+ }
+ .carousel-slide a .sliderName{
+    position: absolute;
+    z-index: 1;
+    top: 80%;
+    left:33%;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.2rem;
+ }
+ .carousel .control-dots{
+    display: none;
+ } 

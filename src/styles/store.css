@@ -284,6 +284,7 @@ body {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
+  text-align: justify;
 }
 
 .storBox .couponItem .couponBox .couponBtn {
@@ -608,6 +609,7 @@ body {
   font-size: .95rem;
   line-height: 1.4;
   margin-bottom: .5rem;
+  text-align: justify;
 }
 
 .storeContent .couponSummary p a {
@@ -627,7 +629,12 @@ body {
   margin-top: 8px;
   margin-bottom: 8px;
 }
-
+.storeContent .tableContainer table tr {
+  border-bottom: 1px solid #e2e2e2;
+}
+.storeContent .tableContainer table tr:last-child {
+  border-bottom: none;
+}
 .storeContent .tableContainer table td {
   padding: 8px;
   vertical-align: top;
@@ -639,7 +646,7 @@ body {
 
 @media(max-width: 600px) {
   .storeContent {
-    padding: .5rem;
+    padding: 0;
   }
 
   .storeContent .couponSummary h3 {
