@@ -13,7 +13,6 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
             if (c_id == coupon_data.id) {
                  setCopyTextShow(true);
                 setTimeout(() => {
-                    setCopyTextShow(false);
                     localStorage.removeItem("copied_code");
 
                 }, 2000)
