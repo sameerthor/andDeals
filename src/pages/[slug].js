@@ -29,7 +29,7 @@ function Store({ store, relStores }) {
     store.store_description = store.store_description.replaceAll("%%curre­ntmonth%%", moment().format('MMMM'));
     store.store_description = store.store_description.replaceAll("%%currentyear%%", moment().format('YYYY'));
     store.store_description = store.store_description.replaceAll("currentyear%%", moment().format('YYYY'));
-    store.store_description = store.store_description.replaceAll(/%%categorystore%% and %%categorystore%%|%categorystore%, %categorystore%, and %categorystore%|%categorystore%, %categorystore%|%categorystore% and %categorystore%|%%categorystore%%, %%categorystore%%/gi, store_names.join(","));
+    store.store_description = store.store_description.replaceAll(/%%categorystore%% and %%categorystore%%|%categorystore%, %categorystore%, and %categorystore%|%categorystore%, %categorystore%|%categorystore% and %categorystore%|%%categorystore%%, %%categorystore%%/gi, store_names.join(", "));
 
     var store_rating = 0;
     var total_ratings = 0;
