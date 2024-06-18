@@ -45,7 +45,7 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                     {coupon_data.coupon_type == "code" ? <div className="couponBtn">
                         <a
                             className="codeLink"
-                            href="#"
+                            href="javascript:void(0)"
                             onClick={async (e) => {
                                 await localStorage.setItem('copied_code', coupon_data.id)
                                 navigator.clipboard.writeText(coupon_data.coupon_code);
@@ -69,7 +69,7 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                             }, 1500)
 
 
-                        }} href="#">
+                        }} href="javascript:void(0)">
                             Get Deal
                         </a>
                         {dealTextShow && <div className="popover"> Get Deal ✅</div>}
