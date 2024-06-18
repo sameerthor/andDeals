@@ -75,11 +75,12 @@ function Store({ store, relStores }) {
                             <li>
                                 <Link href="/">Home</Link> /
                             </li>
-                            <li>
-                                {store.category.length > 0 &&
-                                    <Link href={`/category/${store.category[0].slug}`}>{store.category[0].title}</Link>
-                                }
-                            </li>
+                            {store.category.length > 0 &&
+
+                                <li>
+                                    <Link href={`/category/${store.category[0].slug}`}>{store.category[0].title}</Link> /
+                                </li>
+                            }
                             <li>{store.title}</li>
                         </ul>
                         <div className="share">
