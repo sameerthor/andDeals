@@ -50,7 +50,7 @@ export default function Stores({stores}) {
                                     {stores
                                         .filter((store) => store.title.toLowerCase().startsWith('#') ||  store.title.toLowerCase().startsWith('0') ||  store.title.toLowerCase().startsWith('1') ||  store.title.toLowerCase().startsWith('2') ||  store.title.toLowerCase().startsWith('3') ||  store.title.toLowerCase().startsWith('4') ||  store.title.toLowerCase().startsWith('5') ||  store.title.toLowerCase().startsWith('6') ||  store.title.toLowerCase().startsWith('7') ||  store.title.toLowerCase().startsWith('8') ||  store.title.toLowerCase().startsWith('9'))
                                         .map((item, index) => (
-                                            <li key={index}><Link href={`/${item.slug}`}>{item.title}<span>{item.coupon_set.filter(item=>item.coupon_type=="deal").length} deals & {item.coupon_set.filter(item=>item.coupon_type=="code").length} codes</span></Link></li>
+                                            <li key={index}><Link href={`/${item.slug}`}>{item.title}<span>{item.coupon_set.filter(item=>item.coupon_type=="deal").length} deals {item.coupon_set.filter(x => x.coupon_type == 'code').length >0 && `& ${item.coupon_set.filter(x => x.coupon_type == 'code').length} codes` }</span></Link></li>
 
                                         ))}
 
@@ -65,7 +65,7 @@ export default function Stores({stores}) {
                                                 {stores
                                                     .filter((store) => store.title.toLowerCase().startsWith(c))
                                                     .map((item, index) => (
-                                                        <li key={index}><Link href={`/${item.slug}`}>{item.title}<span>{item.coupon_set.filter(item=>item.coupon_type=="deal").length} deals & {item.coupon_set.filter(item=>item.coupon_type=="code").length} codes</span></Link></li>
+                                                        <li key={index}><Link href={`/${item.slug}`}>{item.title}<span>{item.coupon_set.filter(item=>item.coupon_type=="deal").length} deals {item.coupon_set.filter(x => x.coupon_type == 'code').length >0 && `& ${item.coupon_set.filter(x => x.coupon_type == 'code').length} codes` }</span></Link></li>
 
                                                     ))}
 
@@ -86,7 +86,7 @@ export default function Stores({stores}) {
 
 export async function getStaticProps({ params }) {
 
-    const res = await fetch(`http://173.231.203.186:8083/stores`)
+    const res = await fetch(`http://209.182.201.175:8083/stores`)
     const stores = await res.json()
 
     return {

@@ -86,7 +86,7 @@ export default function Categories({ categoriesMap }) {
 
 export async function getStaticProps({ params }) {
 
-    const res = await fetch(`http://173.231.203.186:8083/categories?ordering=title`)
+    const res = await fetch(`http://209.182.201.175:8083/categories?ordering=title`)
     const categories = await res.json()
     const textToImage = require('text-to-image');
     const categoriesMap = await asyncMap(categories, async (item) => {

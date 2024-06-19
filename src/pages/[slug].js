@@ -74,12 +74,12 @@ function Store({ store, relStores }) {
                     <div className="breadcrumb">
                         <ul>
                             <li>
-                                <Link href="/">Home</Link> /
+                                <Link prefetch={false} href="/">Home</Link> /
                             </li>
                             {store.category.length > 0 &&
 
                                 <li>
-                                    <Link href={`/category/${store.category[0].slug}`}>{store.category[0].title}</Link> /
+                                    <Link prefetch={false} href={`/category/${store.category[0].slug}`}>{store.category[0].title}</Link> /
                                 </li>
                             }
                             <li>{store.title}</li>
@@ -149,7 +149,7 @@ function Store({ store, relStores }) {
                                     {store.store_h1}
                                 </h1>
                                 <div className="avlDeals">
-                                    <p>{store.coupon_set.filter(x => x.coupon_type == 'code').length} Coupons &amp; {store.coupon_set.filter(x => x.coupon_type == 'deal').length} Deals Available</p>
+                                    <p>{store.coupon_set.filter(x => x.coupon_type == 'code').length >0 && `${store.coupon_set.filter(x => x.coupon_type == 'code').length} Coupons &` }  {store.coupon_set.filter(x => x.coupon_type == 'deal').length} Deals Available</p>
                                 </div>
                                 {store.coupons &&
                                     <div className="topdisc">
@@ -248,7 +248,7 @@ function Store({ store, relStores }) {
                                         <ul>
                                             {relStores.map((item, index) =>
                                                 <li key={index}>
-                                                    <Link href={`/${item.slug}`}>{item.title}</Link>
+                                                    <Link prefetch={false} href={`/${item.slug}`}>{item.title}</Link>
                                                 </li>
                                             )}
 
@@ -339,7 +339,7 @@ function Store({ store, relStores }) {
 // It may be called again, on a serverless function, if
 // revalidation is enabled and a new request comes in
 export async function getStaticProps({ params }) {
-    const res = await fetch('http://173.231.203.186:8083/stores/' + params.slug)
+    const res = await fetch('http://209.182.201.175:8083/stores/' + params.slug)
     const store = await res.json()
 
     if (store.detail) {
@@ -348,8 +348,9 @@ export async function getStaticProps({ params }) {
         };
     }
     if (store.category[0]) {
-        const resRelStores = await fetch(`http://173.231.203.186:8083/stores/?category__id=${store.category[0].id}&ordering=-id`)
+        const resRelStores = await fetch(`http://209.182.201.175:8083/stores/?category__id=${store.category[0].id}&ordering=-id`)
         var relStores = await resRelStores.json()
+        relStores=_.shuffle(relStores).slice(0,12)
     } else {
         var relStores = [];
     }
@@ -369,7 +370,7 @@ export async function getStaticProps({ params }) {
 // It may be called again, on a serverless function, if
 // the path has not been generated.
 export async function getStaticPaths() {
-    const res = await fetch('http://173.231.203.186:8083/stores/')
+    const res = await fetch('http://209.182.201.175:8083/stores/')
     const stores = await res.json()
 
     // Get the paths we want to pre-render based on posts

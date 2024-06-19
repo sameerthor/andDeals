@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     redirect: "follow"
   };
 
-  fetch("http://173.231.203.186:8083/stores/", requestOptions)
+  fetch("http://209.182.201.175:8083/stores/", requestOptions)
     .then((response) => response.text())
     .then((result) => console.log(result))
     .catch((error) => console.error(error));

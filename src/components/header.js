@@ -11,7 +11,7 @@ export default function Header() {
     useEffect(() => {
         process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
-        axios.get('http://173.231.203.186:8083/stores/')
+        axios.get('http://209.182.201.175:8083/stores/')
             .then(function (response) {
                 var d = response.data.map(item => { return { key: item.slug, value: item.title } })
                 setFilterdata(d);
