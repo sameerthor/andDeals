@@ -29,7 +29,7 @@ function Store({ store, relStores }) {
     store.store_description = store.store_description.replaceAll("%%curre­ntmonth%%", moment().format('MMMM'));
     store.store_description = store.store_description.replaceAll("%%currentyear%%", moment().format('YYYY'));
     store.store_description = store.store_description.replaceAll("currentyear%%", moment().format('YYYY'));
-    store.store_description = store.store_description.replaceAll(/%%categorystore%% and %%categorystore%%|%categorystore%, %categorystore%, and %categorystore%|%categorystore%, %categorystore%|%categorystore% and %categorystore%|%%categorystore%%, %%categorystore%%/gi, store_names.join(","));
+    store.store_description = store.store_description.replaceAll(/%%categorystore%% and %%categorystore%%|%categorystore%, %categorystore%, and %categorystore%|%categorystore%, %categorystore%|%categorystore% and %categorystore%|%%categorystore%%, %%categorystore%%/gi, store_names.join(", "));
 
     var store_rating = 0;
     var total_ratings = 0;
@@ -57,6 +57,7 @@ function Store({ store, relStores }) {
         },
 
     }
+
     return (
         <>
 
@@ -73,8 +74,14 @@ function Store({ store, relStores }) {
                     <div className="breadcrumb">
                         <ul>
                             <li>
-                                <a href="/">andDeals.com</a> /
+                                <Link href="/">Home</Link> /
                             </li>
+                            {store.category.length > 0 &&
+
+                                <li>
+                                    <Link href={`/category/${store.category[0].slug}`}>{store.category[0].title}</Link> /
+                                </li>
+                            }
                             <li>{store.title}</li>
                         </ul>
                         <div className="share">
@@ -185,31 +192,33 @@ function Store({ store, relStores }) {
                             </div>
 
                             <div className="storeContent">
-                                <div className="couponSummary"dangerouslySetInnerHTML={{ __html: reactStringReplace(store.store_description, '[offer-table]', (match, i) => (
-                                            renderToString(<div className="offerToday">
-                                                <h3>Today's {store.title} Offer</h3>
-                                                <table>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>🛍️ Total Offers</td>
-                                                            <td className="text-right font-medium">{store.coupon_set && store.coupon_set.length}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>🏷️ Active Coupon Codes</td>
-                                                            <td className="text-right font-medium">{store.coupon_set.filter(x => x.coupon_type == 'code').length}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>🛒 Free Shipping</td>
-                                                            <td className="text-right font-medium">{store.coupon_set.filter(x => x.title.toLowerCase().includes("shipping")).length}</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>🔥 Best Offer</td>
-                                                            <td className="text-right font-medium">Flat {store.coupon_set && store.coupon_set[0].title}</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>)
-                                        )).join("")}} >
+                                <div className="couponSummary" dangerouslySetInnerHTML={{
+                                    __html: reactStringReplace(store.store_description, '[offer-table]', (match, i) => (
+                                        renderToString(<div className="offerToday">
+                                            <h3>Today's {store.title} Offer</h3>
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>🛍️ Total Offers</td>
+                                                        <td className="text-right font-medium">{store.coupon_set && store.coupon_set.length}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>🏷️ Active Coupon Codes</td>
+                                                        <td className="text-right font-medium">{store.coupon_set.filter(x => x.coupon_type == 'code').length}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>🛒 Free Shipping</td>
+                                                        <td className="text-right font-medium">{store.coupon_set.filter(x => x.title.toLowerCase().includes("shipping")).length}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>🔥 Best Offer</td>
+                                                        <td className="text-right font-medium">Flat {store.coupon_set && store.coupon_set[0].title}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>)
+                                    )).join("")
+                                }} >
                                 </div>
 
                                 <div className="tableContainer">
