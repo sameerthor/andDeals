@@ -1104,4 +1104,78 @@ font-size: .7rem;
   color: #232323;
   font-size: .8rem;
 }
+.feedBackBox{
+  background-color: rgba(249, 250, 251, 1);
+}
+.feedBackBox .feedbackDetails{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: .5rem;
+  padding-bottom: 0;
 
+}
+.feedBackBox .feedbackDetails .feedBacktext {
+  margin-bottom: 1rem;
+}
+.feedBackBox .feedbackDetails .feedBacktext p{
+  color:  rgba(55, 65, 81, 1);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .5px;
+}
+.feedBackBox .feedbackDetails .feedBackBtns {
+  margin-bottom: 1rem;
+}
+.feedBackBox .feedbackDetails .feedBackBtns button{
+  outline: none;
+  box-shadow: var(0 0 #0000, 0 0 #0000), var(0 0 #0000, 0 0 #0000), var(0 25px 50px -12px rgba(0,0,0,.25));
+  border-radius: 9999px;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 2.2;
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  font-size: .8rem;
+  transition: .3s ease;
+}
+.feedBackBox .feedbackDetails .feedBackBtns button svg{
+  margin-right: .5rem;
+}
+.feedBackBox .feedbackDetails .feedBackBtns button:nth-of-type(1){
+  border: 1px solid rgba(239, 68, 68, 1);
+  color: rgba(239, 68, 68, 1);
+  margin-right: .5rem;
+}
+.feedBackBox .feedbackDetails .feedBackBtns button:nth-of-type(1):hover{
+  background-color: rgba(239, 68, 68, 1);
+  color: #fff;
+}
+.feedBackBox .feedbackDetails .feedBackBtns button:nth-of-type(1):hover svg{
+  fill: #fff;
+}
+.feedBackBox .feedbackDetails .feedBackBtns button:nth-of-type(1) svg{
+  fill: rgba(239, 68, 68, 1);
+}
+
+.feedBackBox .feedbackDetails .feedBackBtns button:nth-of-type(2){
+  border: 1px solid rgba(16, 185, 129, 1);
+  color: rgba(16, 185, 129, 1);
+  margin-right: .5rem;
+}
+.feedBackBox .feedbackDetails .feedBackBtns button:nth-of-type(2) svg{
+  fill: rgba(16, 185, 129, 1);
+}
+.feedBackBox .feedbackDetails .feedBackBtns button:nth-of-type(2):hover{
+  background-color: rgba(16, 185, 129, 1);
+  color: #fff;
+}
+.feedBackBox .feedbackDetails .feedBackBtns button:nth-of-type(2):hover svg{
+  fill: #fff;
+}
+.d-none{
+  display: none;
+}
