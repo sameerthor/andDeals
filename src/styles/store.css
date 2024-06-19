@@ -628,16 +628,13 @@ body {
   color: #333;
   margin-top: 8px;
   margin-bottom: 8px;
+  border: 1px solid #e2e2e2;
 }
-.storeContent .tableContainer table tr {
-  border-bottom: 1px solid #e2e2e2;
-}
-.storeContent .tableContainer table tr:last-child {
-  border-bottom: none;
-}
+
 .storeContent .tableContainer table td {
   padding: 8px;
   vertical-align: top;
+  border: 1px solid #e2e2e2;
 }
 
 .storeContent .tableContainer table td strong {
