@@ -78,7 +78,7 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
 
 
                 </div>
-                <div className='feedBackBox'>
+                <div className='feedBackBox d-none'>
                     <div className='feedbackDetails'>
                         <div className='feedBacktext'>
                             <p>Did this Coupon work?</p>
