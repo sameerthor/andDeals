@@ -149,7 +149,7 @@ function Store({ store, relStores }) {
                                     {store.store_h1}
                                 </h1>
                                 <div className="avlDeals">
-                                    <p>{store.coupon_set.filter(x => x.coupon_type == 'code').length >0 && `${store.coupon_set.filter(x => x.coupon_type == 'code').length} Coupons &` }  {store.coupon_set.filter(x => x.coupon_type == 'deal').length >0 && `${store.coupon_set.filter(x => x.coupon_type == 'deal').length} Deals` } Available</p>
+                                    <p>{store.coupon_set.filter(x => x.coupon_type == 'code').length >0 && `${store.coupon_set.filter(x => x.coupon_type == 'code').length} Coupons` } {store.coupon_set.filter(x => x.coupon_type == 'code').length >0 && store.coupon_set.filter(x => x.coupon_type == 'deal').length >0?"&":''} {store.coupon_set.filter(x => x.coupon_type == 'deal').length >0 && `${store.coupon_set.filter(x => x.coupon_type == 'deal').length} Deals` } Available</p>
                                 </div>
                                 {store.coupons &&
                                     <div className="topdisc">
