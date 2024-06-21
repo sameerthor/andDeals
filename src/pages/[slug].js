@@ -270,7 +270,7 @@ function Store({ store, relStores }) {
                         <div className="col-md-6 p-0">
                             <div className="subscribeImg">
                                 <Image
-                                    height={350} quality={80} width={350} src="/images/subscribe-andDeals.png" alt="" priority={true} />
+                                    height={250} quality={80} width={250} src="/images/subscribe-andDeals.png" alt="" priority={true} />
                             </div>
                         </div>
                         <div className="col-md-6 p-0">

@@ -673,6 +673,7 @@ body {
   letter-spacing: -.5px;
   line-height: 1.4;
   margin-bottom: .5rem;
+  text-align: justify;
 }
 
 .storeContent .faqs .faq_answer {
@@ -682,6 +683,7 @@ body {
   letter-spacing: .5px;
   line-height: 1.4;
   margin-bottom: .5rem;
+  text-align: justify;
 }
 
 /* get code and get deal modal */
@@ -931,18 +933,13 @@ a.verifiedCoupon span {
   background-color: #fff;
 }
 
-.subscribeBox .subscribeBoxInner .subscribeImg {
-  background-color: #f2f2f2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .subscribeBox .subscribeBoxInner .subscribeImg {
   background-color: #f2f2f2;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2.2rem 0rem;
 }
 
 .subscribeBox .subscribeBoxInner .subscribeImg img {
