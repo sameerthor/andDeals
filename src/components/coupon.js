@@ -20,6 +20,12 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
     
                 }    
                 setFeedbackValue(feedback)
+            }else{
+                setCopyTextShow(false);
+                setFeedbackShow(false)
+                setFeedbackValue(false)
+                setCouponShow(false)
+
             }
 
             if (c_id == coupon_data.id) {
@@ -32,13 +38,8 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                
             }
          
-        }else{
-            setCopyTextShow(false);
-            setFeedbackShow(false)
-            setFeedbackValue(false)
-
         }
-    }, 500)
+    }, 150)
 
     return (
         <>
