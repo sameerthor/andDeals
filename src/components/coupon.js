@@ -13,7 +13,13 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
             var c_id = localStorage.getItem("copied_code")
             if (c_id) {
                 setCouponShow(true)
-
+                var feedback = localStorage.getItem("feedback_" + coupon_data.id)
+                if(feedback)
+                {
+                    setFeedbackShow(true)
+    
+                }    
+                setFeedbackValue(feedback)
             }
 
             if (c_id == coupon_data.id) {
@@ -25,13 +31,7 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                 }, 2000)
                
             }
-            var feedback = localStorage.getItem("feedback_" + coupon_data.id)
-            if(feedback)
-            {
-                setFeedbackShow(true)
-
-            }    
-            setFeedbackValue(feedback)
+         
         }
     }, 500)
 
