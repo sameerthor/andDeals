@@ -33,7 +33,7 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
             }    
             setFeedbackValue(feedback)
         }
-    }, 1000)
+    }, 500)
 
     return (
         <>
