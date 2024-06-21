@@ -90,7 +90,7 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
 
 
                 </div>
-                {feedbackShow && <div className='feedBackBox'>
+                {feedbackShow && <div className='feedBackBox' key={`feedback_${index_id}`}>
                     <div className='feedbackDetails'>
                         <div className='feedBacktext'>
                             {feedbackValue == "1" || feedbackValue == "2" ? <p>Thank you for your feedback 🙏</p>
