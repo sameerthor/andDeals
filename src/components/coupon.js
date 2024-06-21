@@ -32,6 +32,11 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                
             }
          
+        }else{
+            setCopyTextShow(false);
+            setFeedbackShow(false)
+            setFeedbackValue(false)
+
         }
     }, 500)
 
