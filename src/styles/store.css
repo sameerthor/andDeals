@@ -7,6 +7,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 0;
+  align-items: center;
 }
 
 .breadcrumb .share {
@@ -24,6 +25,8 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  outline: none;
 }
 
 .breadcrumb .shareSocialLinks a {
@@ -62,10 +65,8 @@ body {
 
 @media(max-width: 600px) {
   .breadcrumb {
-    flex-direction: column;
-    justify-content: left;
-    align-items: flex-start;
-    padding: 0 1rem;
+    align-items: center;
+    padding: 0 .5rem;
   }
 
   .breadcrumb .share {
@@ -178,14 +179,6 @@ body {
 }
 
 @media(max-width: 768px) {
-  .storePage .storeHeader {
-    flex-direction: column-reverse;
-  }
-
-  .storePage .storeTitle {
-    margin-top: .5rem;
-  }
-
   .storePage .sideBanner {
     margin-left: 0
   }
@@ -1271,4 +1264,33 @@ a.verifiedCoupon span {
 
 .d-none {
   display: none;
+}
+
+@media(max-width:500px){
+  .storePage .storeTitle {
+    font-size: 1.2rem;
+   margin-right: .2rem;
+  }
+  .storeHeader .avlDeals p {
+    font-size: .9rem;
+  }
+  .storePage .storeHeader {
+    padding: 1rem .5rem;
+  }
+  .sideBanner .ratings p {
+    font-size: .7rem;
+  }
+  .storePage .sideBanner {
+    border-radius: 0px;
+    box-shadow: none;
+    background-color: #fff;
+
+  }
+  .storePage .bannerImg{
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+  }
+  .storePage .sideBanner .stars {
+    margin-top: 0rem;
+}
 }

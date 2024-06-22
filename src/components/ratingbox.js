@@ -94,7 +94,7 @@ console.log("r",user_rating)
 
                 <Rating
                     readonly={true}
-                    size={20}
+                    size={15}
                     initialValue={rating}
                     transition={true}
                     allowFraction={true}

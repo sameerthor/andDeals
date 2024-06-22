@@ -1,5 +1,5 @@
 import "@/styles/store.css";
-import React, { useState } from 'react'
+import React, { lazy, useState } from 'react'
 import Image from 'next/image'
 import _ from 'lodash'
 import Coupon from "@/components/coupon";
@@ -143,7 +143,7 @@ function Store({ store, relStores }) {
                         </div>
                     </div>
                     <div className="row storeHeader">
-                        <div className="col-md-9 p-0">
+                        <div className="col-9 p-0">
                             <div>
                                 <h1 className="storeTitle">
                                     {store.store_h1}
@@ -158,7 +158,7 @@ function Store({ store, relStores }) {
                                 }
                             </div>
                         </div>
-                        <div className="col-md-3 p-0">
+                        <div className="col-3 p-0">
                             <div className="sideBanner">
                                 <div className="bannerImg">
                                     <a href="#">
@@ -270,7 +270,7 @@ function Store({ store, relStores }) {
                         <div className="col-md-6 p-0">
                             <div className="subscribeImg">
                                 <Image
-                                    height={250} quality={80} width={250} src="/images/subscribe-andDeals.png" alt="" priority={true} />
+                                    height={250} quality={80} width={250} src="/images/subscribe-andDeals.png" loading="lazy"  alt="subscribe"/>
                             </div>
                         </div>
                         <div className="col-md-6 p-0">
