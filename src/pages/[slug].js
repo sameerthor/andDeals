@@ -165,7 +165,7 @@ function Store({ store, relStores }) {
                                         <Image
                                             width="100"
                                             height={100}
-                                            src={`${store.image}`}
+                                            src={`${store.image.replace('http://','https://')}`}
                                             alt={`${store.image_alt}`}
                                             title={`${store.title}`}
                                         />
