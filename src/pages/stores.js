@@ -86,7 +86,7 @@ export default function Stores({ stores }) {
 
 export async function getStaticProps({ params }) {
 
-    const res = await fetch(`http://209.182.201.175:8083/stores`)
+    const res = await fetch(`https://backend.anddeals.com/stores`)
     const stores = await res.json()
 
     return {
