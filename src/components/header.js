@@ -4,14 +4,15 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import ReactSearchBox from "react-search-box";
+import { useRouter } from 'next/router';
 
 export default function Header() {
+    const router = useRouter();
 
     const [filterdata, setFilterdata] = useState([]);
     useEffect(() => {
-        process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
-        axios.get('http://209.182.201.175:8083/stores/')
+        axios.get('https://backend.anddeals.com/store-search/')
             .then(function (response) {
                 var d = response.data.map(item => { return { key: item.slug, value: item.title } })
                 setFilterdata(d);
@@ -59,7 +60,7 @@ export default function Header() {
                             className="d-flex navbarSearch"
                             data={filterdata}
                             clearOnSelect={true}
-                            onSelect={(record) => Router.push('/' + record.item.key)}
+                            onSelect={(record) => router.push('/' + record.item.key)}
                             leftIcon={<svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width={16}

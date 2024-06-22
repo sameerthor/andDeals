@@ -165,7 +165,7 @@ function Store({ store, relStores }) {
                                         <Image
                                             width="100"
                                             height={100}
-                                            src={`${store.image}`}
+                                            src={`${store.image.replace('http://','https://')}`}
                                             alt={`${store.image_alt}`}
                                             title={`${store.title}`}
                                         />
@@ -339,7 +339,7 @@ function Store({ store, relStores }) {
 // It may be called again, on a serverless function, if
 // revalidation is enabled and a new request comes in
 export async function getStaticProps({ params }) {
-    const res = await fetch('http://209.182.201.175:8083/stores/' + params.slug)
+    const res = await fetch('https://backend.anddeals.com/stores/' + params.slug)
     const store = await res.json()
 
     if (store.detail) {
@@ -348,7 +348,7 @@ export async function getStaticProps({ params }) {
         };
     }
     if (store.category[0]) {
-        const resRelStores = await fetch(`http://209.182.201.175:8083/stores/?category__id=${store.category[0].id}&ordering=-id`)
+        const resRelStores = await fetch(`https://backend.anddeals.com/stores/?category__id=${store.category[0].id}&ordering=-id`)
         var relStores = await resRelStores.json()
         relStores=_.shuffle(relStores).slice(0,12)
     } else {
@@ -370,7 +370,7 @@ export async function getStaticProps({ params }) {
 // It may be called again, on a serverless function, if
 // the path has not been generated.
 export async function getStaticPaths() {
-    const res = await fetch('http://209.182.201.175:8083/stores/')
+    const res = await fetch('https://backend.anddeals.com/stores/')
     const stores = await res.json()
 
     // Get the paths we want to pre-render based on posts

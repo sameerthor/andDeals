@@ -79,7 +79,7 @@ function Category({ category, categories }) {
                                             <div className='col-md-3'>
                                                 <Link href={`/${item.slug}`} className="storeBox">
                                                     <div className="imgBox">
-                                                        <img src={`http://localhost:8000${item.image}`} alt="" />
+                                                        <img src={`${item.image.replace('http://','https://')}`} alt="" />
                                                     </div>
                                                     <div className="dealCount">
                                                         <span>View {item.coupon_set.length} Coupons</span>
@@ -147,7 +147,7 @@ function Category({ category, categories }) {
 // revalidation is enabled and a new request comes in
 export async function getStaticProps({ params }) {
 
-    const res = await fetch(`http://209.182.201.175:8083/categories/${params.slug}`)
+    const res = await fetch(`https://backend.anddeals.com/categories/${params.slug}`)
     const category = await res.json()
     if (category.detail) {
         return {
@@ -172,7 +172,7 @@ export async function getStaticProps({ params }) {
 // It may be called again, on a serverless function, if
 // the path has not been generated.
 export async function getStaticPaths() {
-    const res = await fetch('http://209.182.201.175:8083/categories')
+    const res = await fetch('https://backend.anddeals.com/categories')
     const categories = await res.json()
 
     // Get the paths we want to pre-render based on categories

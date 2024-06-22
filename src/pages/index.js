@@ -90,7 +90,7 @@ export default function Home({ stores }) {
                                 <Link href={`/${item.slug}`} className="exclusiveItem">
                                     <div className="circle">
                                         <Image
-                                            src={`${item.image}`}
+                                            src={`${item.image.replace('http://','https://')}`}
                                             alt={`${item.image_alt}`}
                                         />
                                     </div>
@@ -120,7 +120,7 @@ export default function Home({ stores }) {
                                     <Link href={`/${item.slug}`} className="dealBox">
                                         <div className="dealImg">
                                             <Image
-                                                src={`${item.image}`}
+                                                src={`${item.image.replace('http://','https://')}`}
                                                 alt={`${item.image_alt}`}
                                             />
                                         </div>
@@ -148,7 +148,7 @@ export default function Home({ stores }) {
                                 <Link className="trandingDealbox" href="#000">
                                     <div className="imgbox">
                                         <Image
-                                            src={`${item.image}`}
+                                            src={`${item.image.replace('http://','https://')}`}
                                             alt={`${item.image_alt}`}
                                         />
                                     </div>
@@ -184,7 +184,7 @@ export default function Home({ stores }) {
                                     <Link href={`/${item.slug}`} className="popularBox">
                                         <div className="imgBox">
                                             <Image
-                                                src={`${item.image}`}
+                                                src={`${item.image.replace('http://','https://')}`}
                                                 alt={`${item.image_alt}`}
                                             />                </div>
                                         <div className="dealCount">
@@ -203,7 +203,7 @@ export default function Home({ stores }) {
     );
 }
 export async function getStaticProps({ params }) {
-    const res = await fetch(`http://209.182.201.175:8083/stores?ordering=title`)
+    const res = await fetch(`https://backend.anddeals.com/stores?ordering=title`)
     const stores = await res.json()
 
     return {

@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     redirect: "follow"
   };
 
-  fetch("http://209.182.201.175:8083/stores/", requestOptions)
+  fetch("https://backend.anddeals.com/stores/", requestOptions)
     .then((response) => response.text())
     .then((result) => console.log(result))
     .catch((error) => console.error(error));
