@@ -9,9 +9,8 @@ export default function Header() {
 
     const [filterdata, setFilterdata] = useState([]);
     useEffect(() => {
-        process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
-        axios.get('https://backend.anddeals.com/stores/')
+        axios.get('https://backend.anddeals.com/store-search/')
             .then(function (response) {
                 var d = response.data.map(item => { return { key: item.slug, value: item.title } })
                 setFilterdata(d);

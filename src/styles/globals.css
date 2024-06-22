@@ -269,7 +269,7 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .react-search-box-dropdown{
-  z-index: 999999999999999999999;
+  z-index: 99999 !important;
     position: fixed;
     color: black;
     width: 400px;
