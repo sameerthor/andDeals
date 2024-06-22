@@ -43,7 +43,7 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                         </p>
                     </div>
                     {coupon_data.coupon_type == "code" ? <div className="couponBtn">
-                        <a
+                        <button
                             className="codeLink"
                             href="javascript:void(0)"
                             onClick={async (e) => {
@@ -56,11 +56,11 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                         >
                             {couponShow ? coupon_data.coupon_code : coupon_data.coupon_code.replace(/(\w{3}).*/g, "$1" + (new Array(coupon_data.coupon_code.length - 3 + 1).join('*')))}
 
-                        </a>
+                        </button>
                         {copyTextShow && <div className="popover"> Code Copied ✅</div>}
 
                     </div> : <div className="couponBtn getDeal">
-                        <a onClick={(e) => {
+                        <button onClick={(e) => {
                             setCouponShow(true)
                             setDealTextShow(true)
                             setTimeout(() => {
@@ -71,7 +71,7 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
 
                         }} href="javascript:void(0)">
                             Get Deal
-                        </a>
+                        </button>
                         {dealTextShow && <div className="popover"> Get Deal ✅</div>}
 
                     </div>}

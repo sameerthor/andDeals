@@ -295,7 +295,7 @@ body {
   margin-left: 10px;
 }
 
-.storBox .couponItem .couponBox .couponBtn a {
+.storBox .couponItem .couponBox .couponBtn a, .storBox .couponItem .couponBox .couponBtn button {
   width: 200px;
   height: 44px;
   text-align: center;
@@ -316,12 +316,16 @@ body {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
   transition: .3s ease;
 }
+.storBox .couponItem .couponBox .couponBtn button {
+  border: none;
+  outline: none;
+}
 
-.storBox .couponItem .couponBox .couponBtn a:hover {
+.storBox .couponItem .couponBox .couponBtn a:hover, .storBox .couponItem .couponBox .couponBtn button:hover {
   background: linear-gradient(45deg, #ff9a61, #ed7430);
 }
 
-.storBox .couponItem .couponBox .couponBtn.getCode a {
+.storBox .couponItem .couponBox .couponBtn.getCode a, .storBox .couponItem .couponBox .couponBtn.getCode button{
   color: #444444;
   background: linear-gradient(315deg, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.06) 40%, rgba(0, 0, 0, 0.06) 60%, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 0.06) 90%) repeat scroll 0 0 / 6px 6px rgba(0, 0, 0, 0);
   text-align: right;
@@ -334,6 +338,10 @@ body {
   text-transform: uppercase;
   line-height: 1;
   font-size: 20px;
+}
+.storBox .couponItem .couponBox .couponBtn.getCode button{
+  outline: none;
+  border: none;
 }
 
 .storBox .couponItem .couponBox .couponBtn.getCode .code-text {
@@ -396,6 +404,10 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+.infoBox button.shareBtn {
+  border: none;
+  outline: none;
 }
 
 .infoBox .shareSocialLinks a {
