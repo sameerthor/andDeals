@@ -49,7 +49,7 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                         <div className="isverified">
                             <span className="storeName">{store_data.title} Coupon</span>
                             <span className="verifiedIcon">
-                                <img src="/images/verified.svg" width={14} height={14} />
+                                <img src="/images/verified.svg" alt='verified-icon' width={14} height={14} />
                                 <small>Verified</small>
                             </span>
                         </div>
@@ -63,7 +63,6 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                     {coupon_data.coupon_type == "code" ? <div className="couponBtn">
                         <button
                             className="codeLink"
-                            href="javascript:void(0)"
                             onClick={async (e) => {
                                 await localStorage.setItem('copied_code', coupon_data.id)
                                 navigator.clipboard.writeText(coupon_data.coupon_code);
@@ -87,7 +86,7 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                             }, 1500)
 
 
-                        }} href="javascript:void(0)">
+                        }}>
                             Get Deal
                         </button>
                         {dealTextShow && <div className="popover"> Get Deal ✅</div>}
