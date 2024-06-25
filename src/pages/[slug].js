@@ -7,7 +7,7 @@ import moment from 'moment';
 import { NextSeo } from 'next-seo';
 import dynamic from "next/dynamic";
 import reactStringReplace from 'react-string-replace';
-import { renderToString } from 'react-dom/server'
+import { renderToString } from 'react-dom/server';
 
 const RatingBox = dynamic(() => import('@/components/ratingbox'),
     {
