@@ -24,6 +24,8 @@ export default function Home({ stores }) {
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                         <span className="sliderName"> Flipkart.com</span>
+                                        <div class="overlay"></div>
+                                        
                                 </a>
                                 <a href="#">
                                     <Image src="/images/banner-2.png" width={0}
@@ -31,6 +33,7 @@ export default function Home({ stores }) {
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                         <span className="sliderName"> Amazon.com</span>
+                                        <div class="overlay"></div>
                                 </a>
                                 <a href="#">
                                     <Image src="/images/banner-3.png" width={0}
@@ -38,6 +41,7 @@ export default function Home({ stores }) {
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                         <span className="sliderName"> Wow skin care</span>
+                                        <div class="overlay"></div>
                                 </a>
                                 <a href="#">
                                     <Image src="/images/banner-4.png" width={0}
@@ -45,6 +49,7 @@ export default function Home({ stores }) {
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                         <span className="sliderName"> SBI Cards</span>
+                                        <div class="overlay"></div>
                                 </a>
                             </div>
                             <div className="carousel-slide">
@@ -54,6 +59,7 @@ export default function Home({ stores }) {
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                          <span className="sliderName"> Cleartrip.com</span>
+                                         <div class="overlay"></div>
                                 </a>
                                 <a href="#">
                                     <Image src="/images/banner-6.png" width={0}
@@ -61,6 +67,7 @@ export default function Home({ stores }) {
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                          <span className="sliderName">Ajio.com</span>
+                                         <div class="overlay"></div>
                                 </a>
                                 <a href="#">
                                     <Image src="/images/banner-7.png" width={0}
@@ -68,6 +75,7 @@ export default function Home({ stores }) {
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                          <span className="sliderName"> diataal</span>
+                                         <div class="overlay"></div>
                                 </a>
                                 <a href="#">
                                     <Image src="/images/banner-1.png" width={0}
@@ -75,6 +83,7 @@ export default function Home({ stores }) {
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                         <span className="sliderName"> Flipkart.com</span>
+                                        <div class="overlay"></div>
                                 </a>
                             </div>
                         </Carousel>

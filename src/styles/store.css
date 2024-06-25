@@ -1265,7 +1265,15 @@ a.verifiedCoupon span {
 .d-none {
   display: none;
 }
-
+@media(max-width:600px){
+  .popover {
+    font-size: .75rem;
+    text-align: center;
+    padding: .1rem;
+    top: 46px;
+    width: 100px;
+  }
+}
 @media(max-width:500px){
   .storePage .storeTitle {
     font-size: 1.2rem;
@@ -1292,5 +1300,6 @@ a.verifiedCoupon span {
   }
   .storePage .sideBanner .stars {
     margin-top: 0rem;
-}
+  }
+  
 }
