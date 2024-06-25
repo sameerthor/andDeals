@@ -87,7 +87,7 @@ function Store({ store, relStores }) {
                         </ul>
                         <div className="share">
                             <div>
-                                <button href="#" className="shareBtn">
+                                <button href="#" className="shareBtn" name='shareButton' title="Share this coupon">
                                     <svg
                                         className="h-4 w-4 inline"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -319,10 +319,10 @@ function Store({ store, relStores }) {
                                     </div>
                                     <small>
                                         We do care about your data. Read our{" "}
-                                        <a href="#">privacy policy</a> for more information.
+                                        <a href="#" title="visit our privacy policy">privacy policy</a> for more information.
                                     </small>
                                     <div className="subscribeBtn">
-                                        <button>Subscribe</button>
+                                        <button name="subscribe" title="subscribe">Subscribe</button>
                                     </div>
                                 </form>
                             </div>

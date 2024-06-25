@@ -189,6 +189,7 @@ font-family: 'Montserrat', sans-serif;
 .footerLogo{
   font-weight: 600;
   font-size: 1.8rem;
+  color: #fff;
 }
 .footerLogo span{
   color: #ed7430;
@@ -245,9 +246,9 @@ font-family: 'Montserrat', sans-serif;
   padding: 0;
 }
 .footer .copyRightText .lovetext a{
- color: #0d6efd;
+ color: #fff;
  cursor: pointer;
- text-decoration: none;
+ text-decoration: underline;
  display: inline-block;
 }
 .footer .copyRightText .amznAffi{
@@ -262,8 +263,8 @@ font-family: 'Montserrat', sans-serif;
   padding: 0;
 }
 .footer .copyRightText .amznAffi a{
- text-decoration: none;
- color: #0d6efd;
+ text-decoration: underline;
+ color: #fff;
  cursor: pointer;
  display: inline-block;
 }
