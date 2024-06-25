@@ -73,16 +73,16 @@ export default function Footer() {
                             <h5 className="pb-3"> Quick links </h5>
                             <ul className="list-style">
                                 <li className="pb-3">
-                                    <a href="#">Home</a>
+                                    <a href="/">Home</a>
                                 </li>
                                 <li className="pb-3">
                                     <a href="#">Coupons</a>
                                 </li>
                                 <li className="pb-3">
-                                    <a href="#">categories</a>
+                                    <a href="category">categories</a>
                                 </li>
                                 <li className="pb-3">
-                                    <a href="#">Store</a>
+                                    <a href="/stores">Store</a>
                                 </li>
                                 <li className="pb-3">
                                     <a href="#">Blog</a>
@@ -93,13 +93,13 @@ export default function Footer() {
                             <h5 className="pb-3">Help &amp; Support </h5>
                             <ul className="list-style">
                                 <li className="pb-3">
-                                    <a href="#">Contact Us</a>
+                                    <a href="/contact">Contact Us</a>
                                 </li>
                                 <li className="pb-3">
-                                    <a href="#">FAQs</a>
+                                    <a href="/faqs">FAQs</a>
                                 </li>
                                 <li className="pb-3">
-                                    <a href="#">Media</a>
+                                    <a href="/about">about andDeals</a>
                                 </li>
                                 <li className="pb-3">
                                     <a href="#">Press</a>
@@ -110,16 +110,16 @@ export default function Footer() {
                             <h5 className="pb-3"> Legal </h5>
                             <ul className="list-style">
                                 <li className="pb-3">
-                                    <a href="#">Privacy Policy</a>
+                                    <a href="/privacy-policy">Privacy Policy</a>
                                 </li>
                                 <li className="pb-3">
-                                    <a href="#">Terms of Use</a>
+                                    <a href="terms-of-use">Terms of Use</a>
                                 </li>
                                 <li className="pb-3">
-                                    <a href="#">Cookie Policy</a>
+                                    <a href="cookie-policy">Cookie Policy</a>
                                 </li>
                                 <li className="pb-3">
-                                    <a href="#">Terms of use</a>
+                                    <a href="terms-of-use">Terms of use</a>
                                 </li>
                             </ul>
                         </div>
