@@ -461,3 +461,36 @@
  .carousel .control-dots{
     display: none;
  } 
+ @media(max-width:991px){
+    .carousel-slide a{
+        width: calc(98%/3);
+     }
+     .carousel-slide a:last-child{
+       display: none;
+     }
+ }
+ @media(max-width:768px){
+    .carousel-slide a{
+        width: calc(98%/2);
+     }
+     .carousel-slide a:nth-of-type(3){
+       display: none;
+     }
+ }
+ @media(max-width:550px){
+    .carousel-slide a{
+        width: 100%;
+     }
+     .carousel-slide a:nth-of-type(2){
+       display: none;
+     }
+ }
+
+ .carousel-slide .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust the color and opacity as needed */
+  }
