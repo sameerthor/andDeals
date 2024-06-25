@@ -41,6 +41,7 @@ function Store({ store, relStores }) {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
         "name": store.title,
+        "keywords":`${store.title} coupons, ${store.title} offers, ${store.title} coupon code, ${store.title} coupon code today, ${store.title} discount coupon, ${store.title} promo code, ${store.title} offer code, ${store.title} discount offers`,
         "image": store.image,
         "description": store.seo_description,
         "aggregateRating": {
