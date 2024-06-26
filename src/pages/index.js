@@ -99,6 +99,8 @@ export default function Home({ stores }) {
                                 <Link href={`/${item.slug}`} className="exclusiveItem">
                                     <div className="circle">
                                         <Image
+                                     width="100"
+                                     height={100}
                                             src={`${item.image.replace('http://','https://')}`}
                                             alt={`${item.image_alt}`}
                                         />
@@ -129,6 +131,8 @@ export default function Home({ stores }) {
                                     <Link href={`/${item.slug}`} className="dealBox">
                                         <div className="dealImg">
                                             <Image
+                                          width="100"
+                                          height={100}
                                                 src={`${item.image.replace('http://','https://')}`}
                                                 alt={`${item.image_alt}`}
                                             />
@@ -159,10 +163,12 @@ export default function Home({ stores }) {
                                         <Image
                                             src={`${item.image.replace('http://','https://')}`}
                                             alt={`${item.image_alt}`}
+                                            width="100"
+                                            height={100}
                                         />
                                     </div>
                                     <div className="dealInfo">
-                                        <h4>{item.coupon_set[0].content}</h4>
+                                        <h4 dangerouslySetInnerHTML={{__html:item.coupon_set[0].content}}></h4>
                                     </div>
                                     <span className="grabDeal">
                                         Grab Deal
@@ -193,6 +199,8 @@ export default function Home({ stores }) {
                                     <Link href={`/${item.slug}`} className="popularBox">
                                         <div className="imgBox">
                                             <Image
+                                            width="100"
+                                            height={100}
                                                 src={`${item.image.replace('http://','https://')}`}
                                                 alt={`${item.image_alt}`}
                                             />                </div>
