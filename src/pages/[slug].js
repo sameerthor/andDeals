@@ -268,13 +268,13 @@ function Store({ store, relStores }) {
             <section className="subscribeBox">
                 <div className="subscribeBoxInner">
                     <div className="row align-items-center">
-                        <div className="col-md-6 p-0">
+                        <div className="col-md-5 p-0">
                             <div className="subscribeImg">
                                 <Image
-                                    height={250} quality={80} width={250} src="/images/subscribe-andDeals.png" loading="lazy"  alt="subscribe"/>
+                                    height={200} quality={80} width={200} src="/images/subscribe-andDeals.png" loading="lazy"  alt="subscribe"/>
                             </div>
                         </div>
-                        <div className="col-md-6 p-0">
+                        <div className="col-md-7 p-0">
                             <div className="subcribeForm">
                                 <h2>Subscibe to get hot 🔥 deals &amp; daily discount coupons.</h2>
                                 <form action="#someWhere">

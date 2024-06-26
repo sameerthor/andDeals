@@ -186,7 +186,7 @@ body {
 
 @media(max-width: 600px) {
   .storePage {
-    padding: 2rem 0rem;
+    padding: .8rem 0rem;
   }
 
   .storePage .container {
@@ -944,7 +944,7 @@ a.verifiedCoupon span {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2.2rem 0rem;
+  padding: 3.2rem 0rem;
 }
 
 .subscribeBox .subscribeBoxInner .subscribeImg img {
@@ -996,7 +996,9 @@ a.verifiedCoupon span {
 }
 
 .subscribeBoxInner .subcribeForm form small a {
-  color: #0066ff;
+  color: #1a0dab;
+  font-weight: 500;
+  text-decoration: underline;
 }
 
 .subscribeBoxInner .subcribeForm form .inputBox:nth-of-type(2) {
