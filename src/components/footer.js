@@ -33,7 +33,7 @@ export default function Footer() {
                                         <path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z" />
                                     </svg>
                                 </a>
-                                <a href="#" title="Subscribe our WhatsApp">
+                                <a href="https://api.whatsapp.com/send?phone=7219859182&text=urlencodedtext" title="Subscribe our WhatsApp">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 448 512"
@@ -70,13 +70,10 @@ export default function Footer() {
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-6 mb-3">
-                            <h5 className="pb-3"> Quick links </h5>
+                            <span className="pb-3 columnHeading"> Quick links </span>
                             <ul className="list-style">
                                 <li className="pb-3">
                                     <a href="/">Home</a>
-                                </li>
-                                <li className="pb-3">
-                                    <a href="#">Coupons</a>
                                 </li>
                                 <li className="pb-3">
                                     <a href="category">categories</a>
@@ -84,13 +81,10 @@ export default function Footer() {
                                 <li className="pb-3">
                                     <a href="/stores">Store</a>
                                 </li>
-                                <li className="pb-3">
-                                    <a href="#">Blog</a>
-                                </li>
                             </ul>
                         </div>
                         <div className="col-lg-3 col-md-6 mb-3">
-                            <h5 className="pb-3">Help &amp; Support </h5>
+                            <span className="pb-3 columnHeading">Help &amp; Support </span>
                             <ul className="list-style">
                                 <li className="pb-3">
                                     <a href="/contact">Contact Us</a>
@@ -101,13 +95,10 @@ export default function Footer() {
                                 <li className="pb-3">
                                     <a href="/about">about andDeals</a>
                                 </li>
-                                <li className="pb-3">
-                                    <a href="#">Press</a>
-                                </li>
                             </ul>
                         </div>
                         <div className="col-lg-3 col-md-6 mb-3">
-                            <h5 className="pb-3"> Legal </h5>
+                            <span className="pb-3 columnHeading"> Legal </span>
                             <ul className="list-style">
                                 <li className="pb-3">
                                     <a href="/privacy-policy">Privacy Policy</a>

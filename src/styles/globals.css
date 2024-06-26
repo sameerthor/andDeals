@@ -199,9 +199,10 @@ font-family: 'Montserrat', sans-serif;
   font-size: .85rem;
   line-height: 1.4;
 }
-.footer h5{
+.footer .columnHeading{
   font-weight: 600;
   font-size: 1rem;
+  display: block;
 }
 .footer ul li a{
   font-weight: 500;

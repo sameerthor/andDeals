@@ -918,6 +918,9 @@ a.verifiedCoupon span {
   -webkit-line-clamp: 1;
   overflow: hidden;
   text-decoration: underline;
+  padding: .4rem;
+  letter-spacing: .5px;
+  margin-bottom: .5rem;
 }
 
 @media(max-width: 768px) {
