@@ -5,22 +5,28 @@ export default async function handler(req, res) {
     res.status(405).send({ message: 'Only POST requests allowed' })
     return
   }
-  const myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
+  try {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
-  const raw = JSON.stringify(req.body);
+    const raw = JSON.stringify(req.body);
 
-  const requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow"
-  };
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow"
+    };
 
-  fetch("https://backend.anddeals.com/stores/", requestOptions)
-    .then((response) => response.text())
-    .then((result) => console.log(result))
-    .catch((error) => console.error(error));
-  res.status(200).json({ status: "ok" });
+    const response = await fetch("https://backend.anddeals.com/stores/", requestOptions)
 
+    if (!response.ok) {
+      throw new Error("Failed to fetch data from the server");
+    }
+
+    const data = await response.json();
+    res.status(200).json({ data });
+  } catch (err) {
+    res.status(400).json({ err });
+  }
 }
