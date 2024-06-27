@@ -56,8 +56,8 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                         <h2 className="couponDiscount">
                             <a href="#">{coupon_data.title != "" ? coupon_data.title : "Best Deal"}</a>
                         </h2>
-                        <p className="couponDesc">
-                            {coupon_data.content}
+                        <p className="couponDesc" dangerouslySetInnerHTML={{__html:coupon_data.content}}>
+                            
                         </p>
                     </div>
                     {coupon_data.coupon_type == "code" ? <div className="couponBtn">
