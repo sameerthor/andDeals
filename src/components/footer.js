@@ -9,7 +9,7 @@ export default function Footer() {
             <footer className="footer">
                 <div className="container p-4">
                     <div className="row  text-md-start mt-5">
-                        <div className="col-lg-3 col-md-6 mb-3">
+                        <div className="col-lg-3 col-md-6 mb-3 p-0">
                             <a href="/" className="footerLogo pb-2" title="anddeals.com">
                                 and<span>Deals</span>
                             </a>
@@ -69,7 +69,7 @@ export default function Footer() {
                                 </a>
                             </div>
                         </div>
-                        <div className="col-lg-3 col-md-6 mb-3">
+                        <div className="col-lg-3 col-md-6 mb-3 p-0">
                             <span className="pb-3 columnHeading"> Quick links </span>
                             <ul className="list-style">
                                 <li className="pb-3">
@@ -83,11 +83,11 @@ export default function Footer() {
                                 </li>
                             </ul>
                         </div>
-                        <div className="col-lg-3 col-md-6 mb-3">
+                        <div className="col-lg-3 col-md-6 mb-3 p-0">
                             <span className="pb-3 columnHeading">Help &amp; Support </span>
                             <ul className="list-style">
                                 <li className="pb-3">
-                                    <a href="/contact">Contact Us</a>
+                                    <a href="/contact-us">Contact Us</a>
                                 </li>
                                 <li className="pb-3">
                                     <a href="/faqs">FAQs</a>
@@ -97,7 +97,7 @@ export default function Footer() {
                                 </li>
                             </ul>
                         </div>
-                        <div className="col-lg-3 col-md-6 mb-3">
+                        <div className="col-lg-3 col-md-6 mb-3 p-0">
                             <span className="pb-3 columnHeading"> Legal </span>
                             <ul className="list-style">
                                 <li className="pb-3">

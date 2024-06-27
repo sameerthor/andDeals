@@ -233,7 +233,7 @@ function Store({ store, relStores }) {
                                             {store.coupon_set.map((item, index) =>
                                                 <tr key={index}>
                                                     <td>{item.title != "" ? item.title : "Best Deal 👌"}</td>
-                                                    <td>{item.content}</td>
+                                                    <td><p>{item.content}</p></td>
                                                     <td>{item.coupon_type == "code" ? item.coupon_code : "Hot Deal ️‍🔥"}</td>
                                                 </tr>
                                             )}
@@ -268,15 +268,15 @@ function Store({ store, relStores }) {
             <section className="subscribeBox">
                 <div className="subscribeBoxInner">
                     <div className="row align-items-center">
-                        <div className="col-md-5 p-0">
+                        <div className="col-md-7 p-0">
                             <div className="subscribeImg">
                                 <Image
-                                    height={200} quality={80} width={200} src="/images/subscribe-andDeals.png" loading="lazy"  alt="subscribe"/>
+                                    height={100} quality={80} width={100} src="/images/subscribe-andDeals.png" loading="lazy"  alt="subscribe"/>
+                                <h2>Subscibe to get hot 🔥 deals &amp; daily discount coupons.</h2>    
                             </div>
                         </div>
-                        <div className="col-md-7 p-0">
+                        <div className="col-md-5 p-0">
                             <div className="subcribeForm">
-                                <h2>Subscibe to get hot 🔥 deals &amp; daily discount coupons.</h2>
                                 <form action="#someWhere">
                                     <div className="inputBox">
                                         <span>

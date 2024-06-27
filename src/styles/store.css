@@ -947,15 +947,20 @@ a.verifiedCoupon span {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3.2rem 0rem;
+  padding: 5rem 0rem;
 }
 
 .subscribeBox .subscribeBoxInner .subscribeImg img {
   display: block;
-  margin: auto;
   max-width: 100%;
   object-fit: contain;
   max-height: 350px;
+}
+.subscribeBox .subscribeBoxInner .subscribeImg h2 {
+  font-weight: 600;
+  color: #2e2e2e;
+  font-size: 1.45rem;
+  line-height: 1.4;
 }
 
 .subscribeBox .subscribeBoxInner .subcribeForm {
@@ -963,22 +968,22 @@ a.verifiedCoupon span {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem;
+  padding: 0 2rem;
   flex-direction: column;
-}
-
-.subscribeBox .subscribeBoxInner .subcribeForm h2 {
-  font-weight: 600;
-  color: #2e2e2e;
-  margin-bottom: 1.6rem;
-  font-size: 1.6rem;
 }
 
 .subscribeBox .subscribeBoxInner .subcribeForm form {
   max-width: 98%;
   width: 600px;
 }
-
+@media(max-width:768px){
+  .subscribeBox .subscribeBoxInner .subscribeImg {
+    padding: 2rem .2rem;
+  }
+  .subscribeBox .subscribeBoxInner .subscribeImg h2 {
+    font-size: 1.25rem;
+  }
+}
 .subscribeBoxInner .subcribeForm form .inputBox {
   display: flex;
   flex-direction: row;

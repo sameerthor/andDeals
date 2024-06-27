@@ -314,7 +314,7 @@ font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    max-height: 90px;
+    max-height: 80px;
     justify-content: left;
   }
 }
