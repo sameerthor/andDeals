@@ -233,7 +233,7 @@ function Store({ store, relStores }) {
                                             {store.coupon_set.map((item, index) =>
                                                 <tr key={index}>
                                                     <td>{item.title != "" ? item.title : "Best Deal 👌"}</td>
-                                                    <td>{item.content}</td>
+                                                    <td dangerouslySetInnerHTML={{__html:item.content}}></td>
                                                     <td>{item.coupon_type == "code" ? item.coupon_code : "Hot Deal ️‍🔥"}</td>
                                                 </tr>
                                             )}
