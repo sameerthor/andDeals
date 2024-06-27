@@ -125,9 +125,9 @@ export default function Home({ stores }) {
                 <div className="container">
                     <h2>Top deals from favourite stores</h2>
                     <div className="deal-slider">
-                        <div className="row">
+                        <Carousel showThumbs={false}>
                             {stores.filter(x => x.home_options == '2' && x.coupon_set.length > 1).map((item, index) =>
-                                <div className="col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div className="item">
                                     <Link href={`/${item.slug}`} className="dealBox">
                                         <div className="dealImg">
                                             <Image
@@ -145,7 +145,7 @@ export default function Home({ stores }) {
                                     </Link>
                                 </div>
                             )}
-                        </div>
+                        </Carousel>
                     </div>
                 </div>
             </section>
@@ -193,9 +193,9 @@ export default function Home({ stores }) {
                 <div className="container">
                     <h2>Popular Brands</h2>
                     <div className="popularStore">
-                        <div className="row row-cols-2">
+                        <Carousel>
                             {stores.filter(x => x.home_options == '4' && x.coupon_set.length > 1).map((item, index) =>
-                                <div className="col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div className="item">
                                     <Link href={`/${item.slug}`} className="popularBox">
                                         <div className="imgBox">
                                             <Image
@@ -210,7 +210,7 @@ export default function Home({ stores }) {
                                     </Link>
                                 </div>
                             )}
-                        </div>
+                        </Carousel>
                     </div>
                 </div>
             </section>

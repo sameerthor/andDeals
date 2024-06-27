@@ -268,6 +268,7 @@
     text-decoration: none;
     border: 1px solid #999;
     display: inline-block;
+    border-radius: 4px;
  }
 
  @media(max-width: 600px){
@@ -303,12 +304,19 @@
     padding: 10px 20px ;
     vertical-align: top;
     font-size: 15px;
+    min-height: 60px;
+ }
+ .trandingDeals .trandingDealbox .dealInfo p{
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
  }
  .trandingDeals .trandingDealbox .imgbox img{
     max-width: 100%;
     display: block;
     border-radius: 12px;
-    max-height: 98px;
+    max-height: 90px;
  }
  .trandingDeals .trandingDealbox .dealInfo .storeName{
     color: #888;
@@ -365,27 +373,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 150px;
   }
   .popularStore .imgBox img{
     display: block;
     height: 150px;
     padding: 0;
     margin: 0;
-    width: 180px;
     object-fit: contain;
     margin: auto;
+    height: 140px;
+    max-width: 100%;
   }
   .popularStore .dealCount{
    display: flex; 
    align-items: center;
    justify-content: center;
    text-align: center;
-   width: 200px;
    border-radius: 0 0 .5rem .5rem;
    padding: .65rem 0;
    border: 1px solid #e2e2e2;
    border-bottom: none;
    background-color: rgba(239, 246, 255);
+   width: 100%;
   }
   .popularSection .popularBox{
     display: flex;
@@ -393,11 +403,11 @@
     align-items: center;
     flex-direction: column;
     margin: 0 .5rem;
-    width: 200px;
     margin: auto;
     border-radius: .5rem;
     border: 1px solid #e2e2e2;
     background-color: #fff;
+    width: 100%;
   }
   .popularStore .dealCount span{
     text-align: center;
@@ -492,5 +502,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.2); /* Adjust the color and opacity as needed */
+    background-color: rgba(0, 0, 0, 0.2); 
+    border-radius: 10px;
   }
