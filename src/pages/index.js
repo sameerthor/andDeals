@@ -138,8 +138,7 @@ export default function Home({ stores }) {
                                             />
                                         </div>
                                         <p className="dealName">{item.title}</p>
-                                        <p className="dealDesc">
-                                            {item.coupon_set[0].content}
+                                        <p className="dealDesc" dangerouslySetInnerHTML={{__html:item.coupon_set[0].content}}>
                                         </p>
                                         <span className="dealBtn">{item.coupon_set[0].discount_value}</span>
                                     </Link>
