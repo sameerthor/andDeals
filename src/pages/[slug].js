@@ -29,7 +29,7 @@ function Store({ store, relStores }) {
     store.store_description = store.store_description.replaceAll("%%curre­ntmonth%%", moment().format('MMMM'));
     store.store_description = store.store_description.replaceAll("%%currentyear%%", moment().format('YYYY'));
     store.store_description = store.store_description.replaceAll("currentyear%%", moment().format('YYYY'));
-    store.store_description = store.store_description.replaceAll(/%%categorystore%% and %%categorystore%%|%categorystore%, %categorystore%, and %categorystore%|%categorystore%, %categorystore%|%categorystore% and %categorystore%|%%categorystore%%, %%categorystore%%|%categorystore%, %categorystore%, %categorystore%|%categorystore% %categorystore% %categorystore%/gi, store_names.join(", "));
+    store.store_description = store.store_description.replaceAll(/%%categorystore%% and %%categorystore%%|%categorystore%, %categorystore%, and %categorystore%|%categorystore%, %categorystore%|%categorystore% and %categorystore%|%%categorystore%%, %%categorystore%%|%categorystore%, %categorystore%, %categorystore%|%categorystore% %categorystore%, %categorystore%|%categorystore% %categorystore% %categorystore%/gi, store_names.join(", "));
 
     var store_rating = 0;
     var total_ratings = 0;
@@ -233,7 +233,7 @@ function Store({ store, relStores }) {
                                             {store.coupon_set.map((item, index) =>
                                                 <tr key={index}>
                                                     <td>{item.title != "" ? item.title : "Best Deal 👌"}</td>
-                                                    <td><p>{item.content}</p></td>
+                                                    <td dangerouslySetInnerHTML={{__html:item.content}}></td>
                                                     <td>{item.coupon_type == "code" ? item.coupon_code : "Hot Deal ️‍🔥"}</td>
                                                 </tr>
                                             )}
