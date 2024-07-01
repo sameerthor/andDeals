@@ -13,6 +13,10 @@ const RatingBox = dynamic(() => import('@/components/ratingbox'),
     {
         ssr: false,
     });
+const SimCat = dynamic(() => import('@/components/similar-category'),
+    {
+        ssr: false,
+    });
 import Link from "next/link";
 
 function Store({ store, relStores }) {
@@ -29,7 +33,7 @@ function Store({ store, relStores }) {
     store.store_description = store.store_description.replaceAll("%%curre­ntmonth%%", moment().format('MMMM'));
     store.store_description = store.store_description.replaceAll("%%currentyear%%", moment().format('YYYY'));
     store.store_description = store.store_description.replaceAll("currentyear%%", moment().format('YYYY'));
-    store.store_description = store.store_description.replaceAll(/%%categorystore%% and %%categorystore%%|%categorystore%, %categorystore%, and %categorystore%|%categorystore%, %categorystore%|%categorystore% and %categorystore%|%%categorystore%%, %%categorystore%%|%categorystore%, %categorystore%, %categorystore%|%categorystore% %categorystore%, %categorystore%|%categorystore% %categorystore% %categorystore%/gi, store_names.join(", "));
+    store.store_description = store.store_description.replaceAll(/%%categorystore%% and %%categorystore%%|%categorystore%, %categorystore%, and %categorystore%|%categorystore%, %categorystore%|%categorystore% and %categorystore%|%%categorystore%%, %%categorystore%%|%categorystore%, %categorystore%, %categorystore%|%categorystore% %categorystore%, %categorystore%|%categorystore% %categorystore% %categorystore%|%categorystore% %categorystore% and %categorystore%/gi, store_names.join(", "));
 
     var store_rating = 0;
     var total_ratings = 0;
@@ -169,8 +173,8 @@ function Store({ store, relStores }) {
                                             width="100"
                                             height={100}
                                             src={`${store.image.replace('http://', 'https://')}`}
-                                            alt={`${store.title} Coupons`}
-                                            title={`${store.title}`}
+                                            alt={`${store.title.trim()} Coupon Code`}
+                                            title={`${store.title.trim()}`}
                                         />
                                     </a>
                                 </div>
@@ -245,7 +249,7 @@ function Store({ store, relStores }) {
                                 <div className="faqs" dangerouslySetInnerHTML={{ __html: store.extra_info }}>
 
                                 </div>
-                                {relStores.length > 3 && <div className="storeWidget">
+                                {relStores.length > 3 ? <div className="storeWidget">
                                     <h4 className="widgetHeading">Similar Stores</h4>
                                     <div className="topStore">
                                         <ul>
@@ -260,7 +264,7 @@ function Store({ store, relStores }) {
 
                                         </ul>
                                     </div>
-                                </div>}
+                                </div> : <SimCat category_id={store.category.length > 0 ? store.category[0].id : 0} />}
 
 
                             </div>
