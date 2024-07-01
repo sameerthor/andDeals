@@ -274,7 +274,7 @@ function Store({ store, relStores }) {
                             <div className="subscribeImg">
                                 <Image
                                     height={100} quality={80} width={100} src="/images/subscribe-andDeals.png" loading="lazy" alt="subscribe" />
-                                <h2>Subscibe to get hot 🔥 deals &amp; daily discount coupons.</h2>
+                                <h4>Subscibe to get hot 🔥 deals &amp; daily discount coupons.</h4>
                             </div>
                         </div>
                         <div className="col-md-5 p-0">
