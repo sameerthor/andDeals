@@ -17,7 +17,7 @@ import Link from "next/link";
 
 function Store({ store, relStores }) {
 
-    const store_names = relStores.slice(0, 2).map(item => `<a href="/${item.slug}">${item.title}</a>`)
+    const store_names = relStores.filter(f => f.id !== store.id).slice(0, 2).map(item => `<a href="/${item.slug}">${item.title}</a>`)
     store.store_description = store.store_description.replaceAll("%%storename%%", store.title);
     store.store_description = store.store_description.replaceAll("%pe­rcentage% off", store.coupon_set[0].title);
     store.store_description = store.store_description.replaceAll("%percentage% off", store.coupon_set[0].title);
@@ -245,14 +245,16 @@ function Store({ store, relStores }) {
                                 <div className="faqs" dangerouslySetInnerHTML={{ __html: store.extra_info }}>
 
                                 </div>
-                                {relStores.length > 0 && <div className="storeWidget">
+                                {relStores.length > 3 && <div className="storeWidget">
                                     <h4 className="widgetHeading">Similar Stores</h4>
                                     <div className="topStore">
                                         <ul>
-                                            {relStores.map((item, index) =>
-                                                <li key={index}>
-                                                    <Link prefetch={false} href={`/${item.slug}`}>{item.title}</Link>
-                                                </li>
+                                            {relStores.map((item, index) => {
+                                                if (item.id !== store.id)
+                                                    return <li key={index}>
+                                                        <Link prefetch={false} href={`/${item.slug}`}>{item.title}</Link>
+                                                    </li>
+                                            }
                                             )}
 
 
