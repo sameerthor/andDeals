@@ -51,11 +51,11 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                             <span className="verifiedIcon">
                                 <img src="/images/verified.svg" alt='verified-icon' width={14} height={14} />
                                 <small>Verified</small>
-                            </span>
+                            </span> 
                         </div>
-                        <h2 className="couponDiscount">
-                            <a href="#">{coupon_data.title != "" ? coupon_data.title : "Best Deal"}</a>
-                        </h2>
+                        <div className="couponDiscount">
+                                 {coupon_data.title != "" ? coupon_data.title : "Best Deal"}
+                        </div>
                         <p className="couponDesc" dangerouslySetInnerHTML={{__html:coupon_data.content}}>
                             
                         </p>

@@ -317,4 +317,7 @@ font-family: 'Montserrat', sans-serif;
     max-height: 80px;
     justify-content: left;
   }
+  .footer .footerColumn{
+    padding: 0;
+  }
 }
