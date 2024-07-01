@@ -4,7 +4,7 @@ import { asyncMap } from 'modern-async'
 import "@/styles/categories.css";
 import moment from "moment";
 import { NextSeo } from "next-seo";
-export default function Categories({ categoriesMap }) {
+export default function Categories({ categories }) {
     return (
         <>
         <NextSeo
@@ -17,11 +17,11 @@ export default function Categories({ categoriesMap }) {
                     <div className="row">
                         <div className="col-lg-9 p-0">
                             <div className="row catBox">
-                                {categoriesMap.map((item, index) =>
+                                {categories.map((item, index) =>
                                     <div className="col-md-3 col-sm-6 p-1" key={index}>
                                         <Link className="catCard" href={`/category/${item.slug}`}>
                                             <div className="imgBox">
-                                                <Image src={`${item.new_image}`} width={170} height={170} ></Image>
+                                                {item.title}
                                             </div>
                                             <div className="dealCount">
                                                 <span>
@@ -41,9 +41,9 @@ export default function Categories({ categoriesMap }) {
                                     </div>
                                     <div className="catValue">
                                         <p>Total Categories:</p>
-                                        <h4>{categoriesMap.length} +</h4>
+                                        <h4>{categories.length} +</h4>
                                         <p>Total Coupon &amp; Offers:</p>
-                                        <h4> {categoriesMap.reduce((count, current) => count + current.store_set.reduce((count1, current1) => count1 + current1.coupon_set.length, 0), 0)} +</h4>
+                                        <h4> {categories.reduce((count, current) => count + current.store_set.reduce((count1, current1) => count1 + current1.coupon_set.length, 0), 0)} +</h4>
                                     </div>
                                     <div className="verifiedBox">
                                         <p className="text-center">
@@ -63,7 +63,7 @@ export default function Categories({ categoriesMap }) {
                                 <div className="sidebarWidget">
                                     <h2>Popular Merchants</h2>
                                     <ul>
-                                        {categoriesMap.map((item) =>
+                                        {categories.map((item) =>
                                             item.store_set.map((item1, index) => {
                                                 if (index == 0) {
 
@@ -88,15 +88,10 @@ export async function getStaticProps({ params }) {
 
     const res = await fetch(`https://backend.anddeals.com/categories?ordering=title`)
     const categories = await res.json()
-    const textToImage = require('text-to-image');
-    const categoriesMap = await asyncMap(categories, async (item) => {
-        var image = await textToImage.generate(item.title, {
-            bgColor: "#2f3c97", maxWidth: 160, textAlign: "center", fontFamily: "sans-serif", fontWeight: "bold", verticalAlign: "center", textColor: 'white',
-        }); return { new_image: image, ...item }
-    })
+  
     return {
         props: {
-            categoriesMap
+            categories
         },
         // Next.js will attempt to re-generate the page:
         // - When a request comes in
