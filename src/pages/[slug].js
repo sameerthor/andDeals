@@ -152,11 +152,11 @@ function Store({ store, relStores }) {
                                     {store.store_h1}
                                 </h1>
                                 <div className="avlDeals">
-                                    <p>{store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 && `${store.coupon_set.filter(x => x.coupon_type == 'code').length} Coupons`} {store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 && store.coupon_set.filter(x => x.coupon_type == 'deal').length > 0 ? "&" : ''} {store.coupon_set.filter(x => x.coupon_type == 'deal').length > 0 && `${store.coupon_set.filter(x => x.coupon_type == 'deal').length} Deals`} Available</p>
+                                    <h2>{store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 && `${store.coupon_set.filter(x => x.coupon_type == 'code').length} Coupons`} {store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 && store.coupon_set.filter(x => x.coupon_type == 'deal').length > 0 ? "&" : ''} {store.coupon_set.filter(x => x.coupon_type == 'deal').length > 0 && `${store.coupon_set.filter(x => x.coupon_type == 'deal').length} Deals`} Available</h2>
                                 </div>
-                                {store.coupons &&
+                                {store.coupon_set &&
                                     <div className="topdisc">
-                                        <p>{store.coupons[0].title} at {store.title}</p>
+                                        <p>{store.coupon_set[0].title} at {store.title}</p>
                                     </div>
                                 }
                             </div>

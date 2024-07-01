@@ -89,7 +89,7 @@ body {
   border-radius: 4px;
 }
 
-.storeHeader .avlDeals p {
+.storeHeader .avlDeals h2 {
   color: rgba(107, 114, 128);
   font-weight: 600;
   font-size: 1rem;
@@ -1289,7 +1289,7 @@ a.verifiedCoupon span {
     font-size: 1.2rem;
    margin-right: .2rem;
   }
-  .storeHeader .avlDeals p {
+  .storeHeader .avlDeals h2 {
     font-size: .9rem;
   }
   .storePage .storeHeader {
