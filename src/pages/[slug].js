@@ -41,7 +41,7 @@ function Store({ store, relStores }) {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
         "name": store.title,
-        "keywords":`${store.title} coupons, ${store.title} offers, ${store.title} coupon code, ${store.title} coupon code today, ${store.title} discount coupon, ${store.title} promo code, ${store.title} offer code, ${store.title} discount offers`,
+        "keywords": `${store.title} coupons, ${store.title} offers, ${store.title} coupon code, ${store.title} coupon code today, ${store.title} discount coupon, ${store.title} promo code, ${store.title} offer code, ${store.title} discount offers`,
         "image": store.image,
         "description": store.seo_description,
         "aggregateRating": {
@@ -66,10 +66,12 @@ function Store({ store, relStores }) {
                 title={store.seo_title.replaceAll("%%Year%%", moment().format('YYYY'))}
                 description={store.seo_description}
             />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+            {total_ratings > 0 &&
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
+            }
             <section className="storePage">
                 <div className="container">
                     <div className="breadcrumb">
@@ -150,7 +152,7 @@ function Store({ store, relStores }) {
                                     {store.store_h1}
                                 </h1>
                                 <div className="avlDeals">
-                                    <p>{store.coupon_set.filter(x => x.coupon_type == 'code').length >0 && `${store.coupon_set.filter(x => x.coupon_type == 'code').length} Coupons` } {store.coupon_set.filter(x => x.coupon_type == 'code').length >0 && store.coupon_set.filter(x => x.coupon_type == 'deal').length >0?"&":''} {store.coupon_set.filter(x => x.coupon_type == 'deal').length >0 && `${store.coupon_set.filter(x => x.coupon_type == 'deal').length} Deals` } Available</p>
+                                    <p>{store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 && `${store.coupon_set.filter(x => x.coupon_type == 'code').length} Coupons`} {store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 && store.coupon_set.filter(x => x.coupon_type == 'deal').length > 0 ? "&" : ''} {store.coupon_set.filter(x => x.coupon_type == 'deal').length > 0 && `${store.coupon_set.filter(x => x.coupon_type == 'deal').length} Deals`} Available</p>
                                 </div>
                                 {store.coupons &&
                                     <div className="topdisc">
@@ -166,7 +168,7 @@ function Store({ store, relStores }) {
                                         <Image
                                             width="100"
                                             height={100}
-                                            src={`${store.image.replace('http://','https://')}`}
+                                            src={`${store.image.replace('http://', 'https://')}`}
                                             alt={`${store.title} Coupons`}
                                             title={`${store.title}`}
                                         />
@@ -233,7 +235,7 @@ function Store({ store, relStores }) {
                                             {store.coupon_set.map((item, index) =>
                                                 <tr key={index}>
                                                     <td>{item.title != "" ? item.title : "Best Deal 👌"}</td>
-                                                    <td dangerouslySetInnerHTML={{__html:item.content}}></td>
+                                                    <td dangerouslySetInnerHTML={{ __html: item.content }}></td>
                                                     <td>{item.coupon_type == "code" ? item.coupon_code : "Hot Deal ️‍🔥"}</td>
                                                 </tr>
                                             )}
@@ -271,8 +273,8 @@ function Store({ store, relStores }) {
                         <div className="col-md-7 p-0">
                             <div className="subscribeImg">
                                 <Image
-                                    height={100} quality={80} width={100} src="/images/subscribe-andDeals.png" loading="lazy"  alt="subscribe"/>
-                                <h2>Subscibe to get hot 🔥 deals &amp; daily discount coupons.</h2>    
+                                    height={100} quality={80} width={100} src="/images/subscribe-andDeals.png" loading="lazy" alt="subscribe" />
+                                <h2>Subscibe to get hot 🔥 deals &amp; daily discount coupons.</h2>
                             </div>
                         </div>
                         <div className="col-md-5 p-0">
@@ -351,7 +353,7 @@ export async function getStaticProps({ params }) {
     if (store.category[0]) {
         const resRelStores = await fetch(`https://backend.anddeals.com/stores/?category__id=${store.category[0].id}&ordering=-id`)
         var relStores = await resRelStores.json()
-        relStores=_.shuffle(relStores).slice(0,12)
+        relStores = _.shuffle(relStores).slice(0, 12)
     } else {
         var relStores = [];
     }
