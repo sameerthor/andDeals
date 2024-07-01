@@ -12,15 +12,15 @@ export default function Header() {
     const [filterdata, setFilterdata] = useState([]);
     useEffect(() => {
 
-        axios.get('https://backend.anddeals.com/store-search/')
-            .then(function (response) {
-                var d = response.data.map(item => { return { key: item.slug, value: item.title } })
-                setFilterdata(d);
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
+        // axios.get('https://backend.anddeals.com/store-search/')
+        //     .then(function (response) {
+        //         var d = response.data.map(item => { return { key: item.slug, value: item.title } })
+        //         setFilterdata(d);
+        //     })
+        //     .catch(function (error) {
+        //         // handle error
+        //         console.log(error);
+        //     })
     }, []);
     return (
         <>
