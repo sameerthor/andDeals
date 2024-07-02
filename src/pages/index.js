@@ -5,6 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { NextSeo } from "next-seo";
 import Link from "next/link";
 import Router from "next/router";
+import { lazy } from "react";
 export default function Home({ stores }) {
     return (
 
@@ -19,7 +20,7 @@ export default function Home({ stores }) {
                         <Carousel showThumbs={false} infiniteLoop={true} showStatus={false}>
                             <div className="carousel-slide">
                                 <a href="/udemy">
-                                    <Image src="/images/udemy-banner.png" width={0}
+                                    <Image src="/images/udemy-banner.png" loading="lazy" width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -27,62 +28,62 @@ export default function Home({ stores }) {
                                         <div class="overlay"></div>
                                         
                                 </a>
-                                <a href="#">    
-                                    <Image src="/images/reebok-banner.png" width={0}
+                                <a href="/reebok">    
+                                    <Image src="/images/reebok-banner.png" loading="lazy" width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                         <span className="sliderName">Reebok</span>
                                         <div class="overlay"></div>
                                 </a>
-                                <a href="#">
-                                    <Image src="/images/fashion-banner.png" width={0}
+                                <a href="/category/fashion-accessories">
+                                    <Image src="/images/fashion-banner.png" loading="lazy" width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                         <span className="sliderName">Fashion</span>
                                         <div class="overlay"></div>
                                 </a>
-                                <a href="#">
-                                    <Image src="/images/pizza-banner.png" width={0}
+                                <a href="/dominos">
+                                    <Image src="/images/pizza-banner.png" loading="lazy" width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
-                                        <span className="sliderName">Damino's</span>
+                                        <span className="sliderName">Domino's</span>
                                         <div class="overlay"></div>
                                 </a>
                             </div>
                             <div className="carousel-slide">
-                                <a href="#">
-                                    <Image src="/images/travell-banner.png" width={0}
+                                <a href="/booking">
+                                    <Image src="/images/travell-banner.png" loading="lazy" width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
-                                         <span className="sliderName"> Cleartrip.com</span>
+                                         <span className="sliderName">Booking.com</span>
                                          <div class="overlay"></div>
                                 </a>
-                                <a href="#">
-                                    <Image src="/images/skin-care-banner.png" width={0}
+                                <a href="/category/beauty-and-health">
+                                    <Image src="/images/skin-Care-banner.png" loading="lazy" width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
-                                         <span className="sliderName">Ajio.com</span>
+                                         <span className="sliderName">Skin Care</span>
                                          <div class="overlay"></div>
                                 </a>
-                                <a href="#">
-                                    <Image src="/images/furniture-banner.png" width={0}
+                                <a href="/category/bedding-and-mattresses" className="megaSale">
+                                    <Image  src="/images/furniture-banner.png" loading="lazy" width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
-                                         <span className="sliderName"> diataal</span>
+                                         <span className="sliderName">Furniture</span>
                                          <div class="overlay"></div>
                                 </a>
-                                <a href="#">
-                                    <Image src="/images/sports-fittness-banner.png" width={0}
+                                <a href="/category/fitness">
+                                    <Image src="/images/sports-fitness-banner.png" loading="lazy" width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
-                                        <span className="sliderName"> Flipkart.com</span>
+                                        <span className="sliderName">Sports & Fitness</span>
                                         <div class="overlay"></div>
                                 </a>
                             </div>
@@ -98,7 +99,7 @@ export default function Home({ stores }) {
                             <div className="col-lg-3 col-md-4 col-sm-6 exclusive-box">
                                 <Link href={`/${item.slug}`} className="exclusiveItem">
                                     <div className="circle">
-                                        <Image
+                                        <Image loading="lazy"
                                      width="100"
                                      height={100}
                                             src={`${item.image.replace('http://','https://')}`}
@@ -130,7 +131,7 @@ export default function Home({ stores }) {
                                 <div className="col-lg-3 col-md-4 col-sm-6 mb-3">
                                     <Link href={`/${item.slug}`} className="dealBox">
                                         <div className="dealImg">
-                                            <Image
+                                            <Image loading="lazy"
                                           width="100"
                                           height={100}
                                                 src={`${item.image.replace('http://','https://')}`}
@@ -159,7 +160,7 @@ export default function Home({ stores }) {
                             <div className="col-lg-3 col-md-6 col-sm-6 col-12  mb-3">
                                 <Link className="trandingDealbox" href="#000">
                                     <div className="imgbox">
-                                        <Image
+                                        <Image loading="lazy"
                                             src={`${item.image.replace('http://','https://')}`}
                                             alt={`${item.image_alt}`}
                                             width="100"
@@ -197,7 +198,7 @@ export default function Home({ stores }) {
                                 <div className="col-lg-3 col-md-4 col-sm-6 mb-3">
                                     <Link href={`/${item.slug}`} className="popularBox">
                                         <div className="imgBox">
-                                            <Image
+                                            <Image loading="lazy"
                                             width="100"
                                             height={100}
                                                 src={`${item.image.replace('http://','https://')}`}
