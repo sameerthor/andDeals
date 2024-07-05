@@ -13,10 +13,10 @@ const RatingBox = dynamic(() => import('@/components/ratingbox'),
     {
         ssr: false,
     });
-const SimCat = dynamic(() => import('@/components/similar-category'),
-    {
-        ssr: false,
-    });
+// const SimCat = dynamic(() => import('@/components/similar-category'),
+//     {
+//         ssr: false,
+//     });
 import Link from "next/link";
 
 function Store({ store, relStores }) {
@@ -249,7 +249,7 @@ function Store({ store, relStores }) {
                                 <div className="faqs" dangerouslySetInnerHTML={{ __html: store.extra_info }}>
 
                                 </div>
-                                {relStores.length > 3 ? <div className="storeWidget">
+                                {relStores.length > 3 && <div className="storeWidget">
                                     <h4 className="widgetHeading">Similar Stores</h4>
                                     <div className="topStore">
                                         <ul>
@@ -264,7 +264,7 @@ function Store({ store, relStores }) {
 
                                         </ul>
                                     </div>
-                                </div> : <SimCat category_id={store.category.length > 0 ? store.category[0].id : 0} />}
+                                </div> }
 
 
                             </div>
