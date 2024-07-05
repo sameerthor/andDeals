@@ -20,7 +20,7 @@ export default function Home({ stores }) {
                         <Carousel showThumbs={false} infiniteLoop={true} showStatus={false}>
                             <div className="carousel-slide">
                                 <a href="/udemy">
-                                    <Image src="/images/udemy-banner.png" quality={1} priority={true}  width={0}
+                                    <Image src="/images/udemy-banner.png" quality={10} priority={true}  width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
