@@ -17,7 +17,7 @@ export default function Home({ stores }) {
             <section className="homeBanner">
                 <div className="container">
                     <div className="banner-slider carousel-wrapper">
-                        {/* <Carousel showThumbs={false} infiniteLoop={true} showStatus={false}>
+                        <Carousel showThumbs={false} infiniteLoop={true} showStatus={false}>
                             <div className="carousel-slide">
                                 <a href="/udemy">
                                     <Image src="/images/udemy-banner.png" quality={10} priority={true}  width={0}
@@ -87,7 +87,7 @@ export default function Home({ stores }) {
                                         <div className="overlay"></div>
                                 </a>
                             </div>
-                        </Carousel> */}
+                        </Carousel>
                     </div>
                 </div>
             </section>
