@@ -19,7 +19,7 @@ const RatingBox = dynamic(() => import('@/components/ratingbox'),
 //     });
 import Link from "next/link";
 
-function Store({ store, relStores }) {
+function Store({ store, relStores, simCat }) {
 
     const store_names = relStores.filter(f => f.id !== store.id).slice(0, 2).map(item => `<a href="/${item.slug}">${item.title}</a>`)
     store.store_description = store.store_description.replaceAll("%%storename%%", store.title);
@@ -249,7 +249,7 @@ function Store({ store, relStores }) {
                                 <div className="faqs" dangerouslySetInnerHTML={{ __html: store.extra_info }}>
 
                                 </div>
-                                {relStores.length > 3 && <div className="storeWidget">
+                                {relStores.length > 3 ? <div className="storeWidget">
                                     <h4 className="widgetHeading">Similar Stores</h4>
                                     <div className="topStore">
                                         <ul>
@@ -264,7 +264,21 @@ function Store({ store, relStores }) {
 
                                         </ul>
                                     </div>
-                                </div> }
+                                </div> : <div className="storeWidget">
+                                    <h4 className="widgetHeading">Similar Categories</h4>
+                                    <div className="topStore">
+                                        <ul>
+                                            {simCat.map((item, index) => {
+                                                return <li key={index}>
+                                                    <Link prefetch={false} href={`/category/${item.slug}`}>{item.title}</Link>
+                                                </li>
+                                            }
+                                            )}
+
+
+                                        </ul>
+                                    </div>
+                                </div>}
 
 
                             </div>
@@ -356,17 +370,25 @@ export async function getStaticProps({ params }) {
             notFound: true
         };
     }
+    var simCat = [];
     if (store.category[0]) {
         const resRelStores = await fetch(`https://backend.anddeals.com/stores/?category__id=${store.category[0].id}&ordering=-id`)
         var relStores = await resRelStores.json()
         relStores = _.shuffle(relStores).slice(0, 12)
+        if (relStores.length <= 3) {
+            const rescat = await fetch(`https://backend.anddeals.com/categories/?limit=4&offset=${store.category[0].id}`)
+            simCat = await rescat.json()
+
+        }
+
     } else {
         var relStores = [];
     }
     return {
         props: {
             store,
-            relStores
+            relStores,
+            simCat
         },
         // Next.js will attempt to re-generate the page:
         // - When a request comes in
