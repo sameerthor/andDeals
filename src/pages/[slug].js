@@ -20,7 +20,7 @@ const RatingBox = dynamic(() => import('@/components/ratingbox'),
 import Link from "next/link";
 
 function Store({ store, relStores, simCat }) {
-
+    console.log(simCat)
     const store_names = relStores.filter(f => f.id !== store.id).slice(0, 2).map(item => `<a href="/${item.slug}">${item.title}</a>`)
     store.store_description = store.store_description.replaceAll("%%storename%%", store.title);
     store.store_description = store.store_description.replaceAll("%pe­rcentage% off", store.coupon_set[0].title);
@@ -268,7 +268,7 @@ function Store({ store, relStores, simCat }) {
                                     <h4 className="widgetHeading">Similar Categories</h4>
                                     <div className="topStore">
                                         <ul>
-                                            {simCat.map((item, index) => {
+                                            {simCat.results.map((item, index) => {
                                                 return <li key={index}>
                                                     <Link prefetch={false} href={`/category/${item.slug}`}>{item.title}</Link>
                                                 </li>
@@ -376,7 +376,7 @@ export async function getStaticProps({ params }) {
         var relStores = await resRelStores.json()
         relStores = _.shuffle(relStores).slice(0, 12)
         if (relStores.length <= 3) {
-            const rescat = await fetch(`https://backend.anddeals.com/categories/?limit=4&offset=${store.category[0].id}`)
+            const rescat = await fetch(`https://backend.anddeals.com/categories/?limit=4&offset=${Math.ceil(parseInt(store.category[0].id) / 4)}`)
             simCat = await rescat.json()
 
         }
