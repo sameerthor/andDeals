@@ -507,3 +507,6 @@
     background-color: rgba(0, 0, 0, 0.2); 
     border-radius: 10px;
   }
+  .megaSale img{
+    max-height: 160px;
+  }
