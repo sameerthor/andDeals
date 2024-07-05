@@ -20,7 +20,7 @@ export default function Home({ stores }) {
                         <Carousel showThumbs={false} infiniteLoop={true} showStatus={false}>
                             <div className="carousel-slide">
                                 <a href="/udemy">
-                                    <Image src="/images/udemy-banner.png" loading="lazy" width={0}
+                                    <Image src="/images/udemy-banner.png"  width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -29,7 +29,7 @@ export default function Home({ stores }) {
                                         
                                 </a>
                                 <a href="/reebok">    
-                                    <Image src="/images/reebok-banner.png" loading="lazy" width={0}
+                                    <Image src="/images/reebok-banner.png"  width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -37,7 +37,7 @@ export default function Home({ stores }) {
                                         <div class="overlay"></div>
                                 </a>
                                 <a href="/category/fashion-accessories">
-                                    <Image src="/images/fashion-banner.png" loading="lazy" width={0}
+                                    <Image src="/images/fashion-banner.png"  width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -45,7 +45,7 @@ export default function Home({ stores }) {
                                         <div class="overlay"></div>
                                 </a>
                                 <a href="/dominos">
-                                    <Image src="/images/pizza-banner.png" loading="lazy" width={0}
+                                    <Image src="/images/pizza-banner.png"  width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -55,7 +55,7 @@ export default function Home({ stores }) {
                             </div>
                             <div className="carousel-slide">
                                 <a href="/booking">
-                                    <Image src="/images/travell-banner.png" loading="lazy" width={0}
+                                    <Image src="/images/travell-banner.png"  width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -63,7 +63,7 @@ export default function Home({ stores }) {
                                          <div class="overlay"></div>
                                 </a>
                                 <a href="/category/beauty-and-health">
-                                    <Image src="/images/skin-Care-banner.png" loading="lazy" width={0}
+                                    <Image src="/images/skin-Care-banner.png"  width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -71,7 +71,7 @@ export default function Home({ stores }) {
                                          <div class="overlay"></div>
                                 </a>
                                 <a href="/category/bedding-and-mattresses" className="megaSale">
-                                    <Image  src="/images/furniture-banner.png" loading="lazy" width={0}
+                                    <Image  src="/images/furniture-banner.png"  width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -79,7 +79,7 @@ export default function Home({ stores }) {
                                          <div class="overlay"></div>
                                 </a>
                                 <a href="/category/fitness">
-                                    <Image src="/images/sports-fitness-banner.png" loading="lazy" width={0}
+                                    <Image src="/images/sports-fitness-banner.png"  width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -99,7 +99,7 @@ export default function Home({ stores }) {
                             <div className="col-lg-3 col-md-4 col-sm-6 exclusive-box">
                                 <Link href={`/${item.slug}`} className="exclusiveItem">
                                     <div className="circle">
-                                        <Image loading="lazy"
+                                        <Image 
                                      width="100"
                                      height={100}
                                             src={`${item.image.replace('http://','https://')}`}
@@ -131,7 +131,7 @@ export default function Home({ stores }) {
                                 <div className="col-lg-3 col-md-4 col-sm-6 mb-3">
                                     <Link href={`/${item.slug}`} className="dealBox">
                                         <div className="dealImg">
-                                            <Image loading="lazy"
+                                            <Image 
                                           width="100"
                                           height={100}
                                                 src={`${item.image.replace('http://','https://')}`}
@@ -160,7 +160,7 @@ export default function Home({ stores }) {
                             <div className="col-lg-3 col-md-6 col-sm-6 col-12  mb-3">
                                 <Link className="trandingDealbox" href="#000">
                                     <div className="imgbox">
-                                        <Image loading="lazy"
+                                        <Image 
                                             src={`${item.image.replace('http://','https://')}`}
                                             alt={`${item.image_alt}`}
                                             width="100"
@@ -198,7 +198,7 @@ export default function Home({ stores }) {
                                 <div className="col-lg-3 col-md-4 col-sm-6 mb-3">
                                     <Link href={`/${item.slug}`} className="popularBox">
                                         <div className="imgBox">
-                                            <Image loading="lazy"
+                                            <Image 
                                             width="100"
                                             height={100}
                                                 src={`${item.image.replace('http://','https://')}`}
