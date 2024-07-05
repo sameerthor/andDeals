@@ -25,7 +25,7 @@ export default function Home({ stores }) {
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                         <span className="sliderName">Udemy</span>
-                                        <div class="overlay"></div>
+                                        <div className="overlay"></div>
                                         
                                 </a>
                                 <a href="/reebok">    
@@ -34,7 +34,7 @@ export default function Home({ stores }) {
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                         <span className="sliderName">Reebok</span>
-                                        <div class="overlay"></div>
+                                        <div className="overlay"></div>
                                 </a>
                                 <a href="/category/fashion-accessories">
                                     <Image src="/images/fashion-banner.png"  width={0}
@@ -42,7 +42,7 @@ export default function Home({ stores }) {
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                         <span className="sliderName">Fashion</span>
-                                        <div class="overlay"></div>
+                                        <div className="overlay"></div>
                                 </a>
                                 <a href="/dominos">
                                     <Image src="/images/pizza-banner.png"  width={0}
@@ -50,7 +50,7 @@ export default function Home({ stores }) {
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                         <span className="sliderName">Domino's</span>
-                                        <div class="overlay"></div>
+                                        <div className="overlay"></div>
                                 </a>
                             </div>
                             <div className="carousel-slide">
@@ -60,7 +60,7 @@ export default function Home({ stores }) {
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                          <span className="sliderName">Booking.com</span>
-                                         <div class="overlay"></div>
+                                         <div className="overlay"></div>
                                 </a>
                                 <a href="/category/beauty-and-health">
                                     <Image src="/images/skin-Care-banner.png"  width={0}
@@ -68,7 +68,7 @@ export default function Home({ stores }) {
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                          <span className="sliderName">Skin Care</span>
-                                         <div class="overlay"></div>
+                                         <div className="overlay"></div>
                                 </a>
                                 <a href="/category/bedding-and-mattresses" className="megaSale">
                                     <Image  src="/images/furniture-banner.png"  width={0}
@@ -76,7 +76,7 @@ export default function Home({ stores }) {
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                          <span className="sliderName">Furniture</span>
-                                         <div class="overlay"></div>
+                                         <div className="overlay"></div>
                                 </a>
                                 <a href="/category/fitness">
                                     <Image src="/images/sports-fitness-banner.png"  width={0}
@@ -84,7 +84,7 @@ export default function Home({ stores }) {
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
                                         <span className="sliderName">Sports & Fitness</span>
-                                        <div class="overlay"></div>
+                                        <div className="overlay"></div>
                                 </a>
                             </div>
                         </Carousel>
