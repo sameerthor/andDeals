@@ -56,8 +56,8 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                         <div className="couponDiscount">
                                  {coupon_data.title != "" ? coupon_data.title : "Best Deal"}
                         </div>
-                        <p className="couponDesc" dangerouslySetInnerHTML={{__html:coupon_data.content}}>
-                            
+                        <p className="couponDesc">
+                            {coupon_data.content.replace(/<[^>]*>?/gm, '')}
                         </p>
                     </div>
                     {coupon_data.coupon_type == "code" ? <div className="couponBtn">
