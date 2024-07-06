@@ -488,12 +488,10 @@ body {
     padding: 0 .5rem;
   }
 
-  .storBox .couponItem .couponBox {
-    flex-direction: column;
-  }
-
   .storBox .couponItem .couponBox .couponBtn {
-    margin: .5rem auto;
+    width: 140px;
+    justify-content: right;
+    margin-left: .2rem;
   }
 
   .storBox .couponItem .couponBox .couponDiscount {
