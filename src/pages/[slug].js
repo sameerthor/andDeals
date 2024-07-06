@@ -13,14 +13,14 @@ const RatingBox = dynamic(() => import('@/components/ratingbox'),
     {
         ssr: false,
     });
-const SimCat = dynamic(() => import('@/components/similar-category'),
-    {
-        ssr: false,
-    });
+// const SimCat = dynamic(() => import('@/components/similar-category'),
+//     {
+//         ssr: false,
+//     });
 import Link from "next/link";
 
-function Store({ store, relStores }) {
-
+function Store({ store, relStores, simCat }) {
+    console.log(simCat)
     const store_names = relStores.filter(f => f.id !== store.id).slice(0, 2).map(item => `<a href="/${item.slug}">${item.title}</a>`)
     store.store_description = store.store_description.replaceAll("%%storename%%", store.title);
     store.store_description = store.store_description.replaceAll("%pe­rcentage% off", store.coupon_set[0].title);
@@ -264,7 +264,21 @@ function Store({ store, relStores }) {
 
                                         </ul>
                                     </div>
-                                </div> : <SimCat category_id={store.category.length > 0 ? store.category[0].id : 0} />}
+                                </div> : <div className="storeWidget">
+                                    <h4 className="widgetHeading">Similar Categories</h4>
+                                    <div className="topStore">
+                                        <ul>
+                                            {simCat.results.map((item, index) => {
+                                                return <li key={index}>
+                                                    <Link prefetch={false} href={`/category/${item.slug}`}>{item.title}</Link>
+                                                </li>
+                                            }
+                                            )}
+
+
+                                        </ul>
+                                    </div>
+                                </div>}
 
 
                             </div>
@@ -356,17 +370,25 @@ export async function getStaticProps({ params }) {
             notFound: true
         };
     }
+    var simCat = [];
     if (store.category[0]) {
         const resRelStores = await fetch(`https://backend.anddeals.com/stores/?category__id=${store.category[0].id}&ordering=-id`)
         var relStores = await resRelStores.json()
         relStores = _.shuffle(relStores).slice(0, 12)
+        if (relStores.length <= 3) {
+            const rescat = await fetch(`https://backend.anddeals.com/categories/?limit=4&offset=${Math.ceil(parseInt(store.category[0].id) / 4)}`)
+            simCat = await rescat.json()
+
+        }
+
     } else {
         var relStores = [];
     }
     return {
         props: {
             store,
-            relStores
+            relStores,
+            simCat
         },
         // Next.js will attempt to re-generate the page:
         // - When a request comes in
