@@ -6,7 +6,7 @@ import { NextSeo } from "next-seo";
 import Link from "next/link";
 import Router from "next/router";
 import { lazy } from "react";
-export default function Home({ stores }) {
+export default function Home({  storesOne,storesTwo,storesThree,storesFour }) {
     return (
 
         <>
@@ -20,7 +20,7 @@ export default function Home({ stores }) {
                         <Carousel showThumbs={false} infiniteLoop={true} showStatus={false}>
                             <div className="carousel-slide">
                                 <a href="/udemy">
-                                    <Image src="/images/udemy-banner.png" loading="lazy" width={0}
+                                    <Image src="/images/udemy-banner.png" priority={true} quality={1} width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -29,7 +29,7 @@ export default function Home({ stores }) {
                                         
                                 </a>
                                 <a href="/reebok">    
-                                    <Image src="/images/reebok-banner.png" loading="lazy" width={0}
+                                    <Image src="/images/reebok-banner.png" priority={true} quality={1} width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -37,7 +37,7 @@ export default function Home({ stores }) {
                                         <div class="overlay"></div>
                                 </a>
                                 <a href="/category/fashion-accessories">
-                                    <Image src="/images/fashion-banner.png" loading="lazy" width={0}
+                                    <Image src="/images/fashion-banner.png" priority={true} quality={1} width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -45,7 +45,7 @@ export default function Home({ stores }) {
                                         <div class="overlay"></div>
                                 </a>
                                 <a href="/dominos">
-                                    <Image src="/images/pizza-banner.png" loading="lazy" width={0}
+                                    <Image src="/images/pizza-banner.png" priority={true} quality={1} width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -55,7 +55,7 @@ export default function Home({ stores }) {
                             </div>
                             <div className="carousel-slide">
                                 <a href="/booking">
-                                    <Image src="/images/travell-banner.png" loading="lazy" width={0}
+                                    <Image src="/images/travell-banner.png"  quality={1} width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -63,7 +63,7 @@ export default function Home({ stores }) {
                                          <div class="overlay"></div>
                                 </a>
                                 <a href="/category/beauty-and-health">
-                                    <Image src="/images/Skin-Care-banner.png" loading="lazy" width={0}
+                                    <Image src="/images/Skin-Care-banner.png"  quality={1} width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -71,7 +71,7 @@ export default function Home({ stores }) {
                                          <div class="overlay"></div>
                                 </a>
                                 <a href="/category/bedding-and-mattresses" className="megaSale">
-                                    <Image  src="/images/furniture-banner.png" loading="lazy" width={0}
+                                    <Image  src="/images/furniture-banner.png"  quality={1} width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -79,7 +79,7 @@ export default function Home({ stores }) {
                                          <div class="overlay"></div>
                                 </a>
                                 <a href="/category/fitness">
-                                    <Image src="/images/sports-fitness-banner.png" loading="lazy" width={0}
+                                    <Image src="/images/sports-fitness-banner.png"  quality={1} width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -95,7 +95,7 @@ export default function Home({ stores }) {
                 <div className="container">
                     <div className="row">
                         <h2>Exclusive Deals &amp; Promocodes</h2>
-                        {stores.filter(x => x.home_options == '1').map((item, index) =>
+                        {storesOne.map((item, index) =>
                             <div className="col-lg-3 col-md-4 col-sm-6 exclusive-box">
                                 <Link href={`/${item.slug}`} className="exclusiveItem">
                                     <div className="circle">
@@ -127,7 +127,7 @@ export default function Home({ stores }) {
                     <h2>Top deals from favourite stores</h2>
                     <div className="deal-slider">
                         <div className="row">
-                            {stores.filter(x => x.home_options == '2' && x.coupon_set.length > 1).map((item, index) =>
+                            {storesTwo.map((item, index) =>
                                 <div className="col-lg-3 col-md-4 col-sm-6 mb-3">
                                     <Link href={`/${item.slug}`} className="dealBox">
                                         <div className="dealImg">
@@ -156,7 +156,7 @@ export default function Home({ stores }) {
                         <Link href="/stores">Explore More</Link>
                     </div>
                     <div className="row">
-                        {stores.filter(x => x.home_options == '3' && x.coupon_set.length > 1).map((item, index) =>
+                        {storesThree.map((item, index) =>
                             <div className="col-lg-3 col-md-6 col-sm-6 col-12  mb-3">
                                 <Link className="trandingDealbox" href="#000">
                                     <div className="imgbox">
@@ -194,7 +194,7 @@ export default function Home({ stores }) {
                     <h2>Popular Brands</h2>
                     <div className="popularStore">
                         <div className="row row-cols-2">
-                            {stores.filter(x => x.home_options == '4' && x.coupon_set.length > 1).map((item, index) =>
+                            {storesFour.map((item, index) =>
                                 <div className="col-lg-3 col-md-4 col-sm-6 mb-3">
                                     <Link href={`/${item.slug}`} className="popularBox">
                                         <div className="imgBox">
@@ -220,12 +220,22 @@ export default function Home({ stores }) {
     );
 }
 export async function getStaticProps({ params }) {
-    const res = await fetch(`https://backend.anddeals.com/stores?ordering=title`)
-    const stores = await res.json()
+    const resOne = await fetch(`https://backend.anddeals.com/stores/?home_options=1&ordering=-id`)
+    const storesOne = await resOne.json()
+    const resTwo = await fetch(`https://backend.anddeals.com/stores/?home_options=2&ordering=-id`)
+    const storesTwo = await resTwo.json()
+    const resThree = await fetch(`https://backend.anddeals.com/stores/?home_options=3&ordering=-id`)
+    const storesThree = await resThree.json()
+    const resFour = await fetch(`https://backend.anddeals.com/stores/?home_options=4&ordering=-id`)
+    const storesFour = await resFour.json()
+   
 
     return {
         props: {
-            stores
+            storesOne,
+            storesTwo,
+            storesThree,
+            storesFour
         },
         // Next.js will attempt to re-generate the page:
         // - When a request comes in
