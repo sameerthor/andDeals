@@ -500,6 +500,7 @@ body {
 
   .storBox .couponItem .couponBox .couponDesc {
     font-size: .9rem;
+    text-align: left;
   }
 
   .detailsBox .tnc h4 {
