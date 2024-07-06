@@ -63,7 +63,7 @@ export default function Home({ stores }) {
                                          <div class="overlay"></div>
                                 </a>
                                 <a href="/category/beauty-and-health">
-                                    <Image src="/images/skin-Care-banner.png" loading="lazy" width={0}
+                                    <Image src="/images/Skin-Care-banner.png" loading="lazy" width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
