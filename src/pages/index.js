@@ -55,7 +55,7 @@ export default function Home({  storesOne,storesTwo,storesThree,storesFour }) {
                             </div>
                             <div className="carousel-slide">
                                 <a href="/booking">
-                                    <Image src="/images/travell-banner.png" priority={true} quality={1} width={0}
+                                    <Image src="/images/travell-banner.png"  quality={1} width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -63,7 +63,7 @@ export default function Home({  storesOne,storesTwo,storesThree,storesFour }) {
                                          <div class="overlay"></div>
                                 </a>
                                 <a href="/category/beauty-and-health">
-                                    <Image src="/images/Skin-Care-banner.png" priority={true} quality={1} width={0}
+                                    <Image src="/images/Skin-Care-banner.png"  quality={1} width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -71,7 +71,7 @@ export default function Home({  storesOne,storesTwo,storesThree,storesFour }) {
                                          <div class="overlay"></div>
                                 </a>
                                 <a href="/category/bedding-and-mattresses" className="megaSale">
-                                    <Image  src="/images/furniture-banner.png" priority={true} quality={1} width={0}
+                                    <Image  src="/images/furniture-banner.png"  quality={1} width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
@@ -79,7 +79,7 @@ export default function Home({  storesOne,storesTwo,storesThree,storesFour }) {
                                          <div class="overlay"></div>
                                 </a>
                                 <a href="/category/fitness">
-                                    <Image src="/images/sports-fitness-banner.png" priority={true} quality={1} width={0}
+                                    <Image src="/images/sports-fitness-banner.png"  quality={1} width={0}
                                         height={0}
                                         sizes="100vw"
                                         style={{ width: '100%', height: 'auto' }} alt="" />
