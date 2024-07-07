@@ -29,6 +29,12 @@ const nextConfig = {
     
     return config;
   },
+  rewrites: async () => [
+    {
+      source: '/anddeals-sitemap.xml',
+      destination: '/sitemap',
+    }
+  ]
 };
 
 export default nextConfig;
