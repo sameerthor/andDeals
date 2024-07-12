@@ -169,7 +169,7 @@ function Store({ store, relStores, simCat }) {
                             <div className="sideBanner">
                                 <div className="bannerImg">
                                     <a href="#">
-                                        <Image
+                                        <img
                                             width="100"
                                             height={100}
                                             src={`${store.image.replace('http://', 'https://')}`}

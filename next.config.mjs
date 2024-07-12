@@ -8,8 +8,7 @@ const nextConfig = {
       {
         hostname: '**',
       },
-    ],
-    unoptimized: true
+    ]
   },
   webpack(config) {
     let hasFound = false
