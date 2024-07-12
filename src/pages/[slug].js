@@ -363,8 +363,12 @@ function Store({ store, relStores, simCat }) {
 // revalidation is enabled and a new request comes in
 export async function getStaticProps({ params }) {
     const res = await fetch('https://backend.anddeals.com/stores/' + params.slug)
-    const store = await res.json()
-
+    var store = await res.json()
+    store.coupon_set.map(coupon => {
+        if (coupon.title.includes("$")) {
+            return coupon.title = "Best Deal";
+        }
+    });
     if (store.detail) {
         return {
             notFound: true
