@@ -79,7 +79,7 @@ function Category({ category, categories }) {
                                             <div className='col-md-3'>
                                                 <Link href={`/${item.slug}`} className="storeBox">
                                                     <div className="imgBox">
-                                                        <img src={`https://backend.anddeals.com${item.image.replace('http://','https://')}`} alt="" />
+                                                        <img src={`${item.image}`} alt="" />
                                                     </div>
                                                     <div className="dealCount">
                                                         <span>View {item.coupon_set.length} Coupons</span>
