@@ -4,7 +4,7 @@ const { publicRuntimeConfig } = getConfig()
 
 const Sitemap = () => { };
 const toUrl = (data) =>
-    data.slug == 1 ? `<url><loc>${data.url}</loc><lastmod>${data.last_mod}</lastmod><changefreq>daily</changefreq><priority>1</priority></url>` : `<url><loc>${data.url}</loc><changefreq>daily</changefreq><priority>0.7</priority></url>`;
+    data.slug == 1 ? `<url><loc>${data.url}</loc> <image:image><image:loc>${data.image}</image:loc></image:image><lastmod>${data.last_mod}</lastmod><changefreq>daily</changefreq><priority>1</priority></url>` : `<url><loc>${data.url}</loc><changefreq>daily</changefreq><priority>0.7</priority></url>`;
 
 const createSitemap = (urlList) =>
     `<?xml version="1.0" encoding="UTF-8"?>
@@ -12,14 +12,14 @@ const createSitemap = (urlList) =>
     ${urlList.map((data) => toUrl(data)).join("")}
     </urlset>`;
 
-    export async function getServerSideProps({res,req}) {
+export async function getServerSideProps({ res, req }) {
 
 
-    var urlList = [{ url: "https://www.anddeals.com" },{ url: "https://www.anddeals.com/about" },{ url: "https://www.anddeals.com/category" },{ url: "https://www.anddeals.com/contact-us" },{ url: "https://www.anddeals.com/cookie-policy" },{ url: "https://www.anddeals.com/faqs" },{ url: "https://www.anddeals.com/privacy-policy" },{ url: "https://www.anddeals.com/stores" },{url:"https://www.anddeals.com/terms-of-use"}]
+    var urlList = [{ url: "https://www.anddeals.com" }, { url: "https://www.anddeals.com/about" }, { url: "https://www.anddeals.com/category" }, { url: "https://www.anddeals.com/contact-us" }, { url: "https://www.anddeals.com/cookie-policy" }, { url: "https://www.anddeals.com/faqs" }, { url: "https://www.anddeals.com/privacy-policy" }, { url: "https://www.anddeals.com/stores" }, { url: "https://www.anddeals.com/terms-of-use" }]
     const result = await fetch('https://backend.anddeals.com/stores/')
     const stores = await result.json()
     stores.forEach(element => {
-        urlList.push({ url: "https://www.anddeals.com/" + element.slug,last_mod:element.last_mod, slug: 1 })
+        urlList.push({ url: "https://www.anddeals.com/" + element.slug, last_mod: element.last_mod, slug: 1,image:element.image })
     });
 
     const resultCat = await fetch('https://backend.anddeals.com/categories/')
@@ -32,7 +32,7 @@ const createSitemap = (urlList) =>
     res.setHeader("Content-Type", "text/xml");
     res.write(sitemap);
     res.end();
-    return { props: { results: { urlList } },  revalidate: 10 }
+    return { props: { results: { urlList } }, revalidate: 10 }
 };
 
 
