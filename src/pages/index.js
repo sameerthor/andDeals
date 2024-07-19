@@ -158,7 +158,7 @@ export default function Home({  storesOne,storesTwo,storesThree,storesFour }) {
                     <div className="row">
                         {storesThree.map((item, index) =>
                             <div className="col-lg-3 col-md-6 col-sm-6 col-12  mb-3">
-                                <Link className="trandingDealbox" href="#000">
+                                <Link className="trandingDealbox" href={`/${item.slug}`}>
                                     <div className="imgbox">
                                         <Image loading="lazy"
                                             src={`${item.image.replace('http://','https://')}`}
