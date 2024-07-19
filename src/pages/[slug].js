@@ -42,25 +42,23 @@ function Store({ store, relStores, simCat }) {
         total_ratings = store.rating[0].five + store.rating[0].four + store.rating[0].three + store.rating[0].two + store.rating[0].one
     }
     const jsonLd = {
-        '@context': 'https://schema.org',
-        '@type': 'WebPage',
-        "name": store.title,
-        "keywords": `${store.title} coupons, ${store.title} offers, ${store.title} coupon code, ${store.title} coupon code today, ${store.title} discount coupon, ${store.title} promo code, ${store.title} offer code, ${store.title} discount offers`,
-        "image": store.image,
-        "description": store.seo_description,
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingCount": total_ratings,
-            "ratingValue": store_rating,
-            "worstRating": 1,
-            "bestRating": 5,
-            "itemReviewed": {
-                "@type": "Store",
-                "name": store.title,
-                "image": store.image
-            }
-        },
-
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://anddeals.com"
+        }, store.category.length > 0 ? {
+            "@type": "ListItem",
+            "position": 2,
+            "name": store.category[0].title,
+            "item": "https://anddeals.com/category/" + store.category[0].slug
+        } : '', {
+            "@type": "ListItem",
+            "position": store.category.length > 0 ? 3 : 2,
+            "name": store.title
+        }]
     }
 
     return (
