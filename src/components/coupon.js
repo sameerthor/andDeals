@@ -21,6 +21,7 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                 setFeedbackValue(feedback)
             } else {
                 setCopyTextShow(false);
+                setDealTextShow(false);
                 setFeedbackShow(false)
                 setFeedbackValue(false)
                 setCouponShow(false)
@@ -29,7 +30,8 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
 
             if (c_id == coupon_data.id) {
                 setCopyTextShow(true);
-                setFeedbackShow(true)
+                setDealTextShow(true);
+                setFeedbackShow(true);
                 setTimeout(() => {
                     localStorage.removeItem("copied_code");
 
@@ -78,13 +80,8 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                     </div> : <div className="couponBtn getDeal">
                         <button onClick={async (e) => {
                             await localStorage.setItem('copied_code', coupon_data.id)
-                            setCouponShow(true)
-                            setDealTextShow(true)
-                            setTimeout(() => {
-                                setDealTextShow(false)
-                                window.open(`/${store_data.slug}`, "_blank");
-                                window.open(store_data.affiliate_url, "_self");
-                            }, 1500)
+                            window.open(`/${store_data.slug}`, "_blank");
+                            window.open(store_data.affiliate_url, "_self");
 
 
                         }}>
@@ -104,8 +101,8 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
 
                         </div>
                         <div className='feedBackBtns'>
-                            <button type='button' className={feedbackValue == "2" && "selected"} disabled={(feedbackValue == "1" || feedbackValue == "2") && true} onClick={(e) => {
-                                localStorage.setItem("feedback_" + coupon_data.id, "2")
+                            <button type='button' className={feedbackValue == "2" && "selected"} disabled={(feedbackValue == "1" || feedbackValue == "2") && true} onClick={async(e) => {
+                               await localStorage.setItem("feedback_" + coupon_data.id, "2")
                                 setFeedbackValue("2")
                             }}>
                                 <svg id="thumbsdownsvg" class="cursor-pointer stroke-current text-red-500 stroke-1 mx-1" width="18" height="16" viewBox="0 0 18 16" xmlns="http://www.w3.org/2000/svg" fill="white">
@@ -113,8 +110,8 @@ export default function Coupon({ index_id, store_data, coupon_data }) {
                                 </svg>
                                 No
                             </button>
-                            <button type="button" className={feedbackValue == "1" && "selected"} disabled={(feedbackValue == "1" || feedbackValue == "2") && true} onClick={(e) => {
-                                localStorage.setItem("feedback_" + coupon_data.id, "1")
+                            <button type="button" className={feedbackValue == "1" && "selected"} disabled={(feedbackValue == "1" || feedbackValue == "2") && true} onClick={async(e) => {
+                               await localStorage.setItem("feedback_" + coupon_data.id, "1")
                                 setFeedbackValue("1")
                             }}>
 
