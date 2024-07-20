@@ -61,6 +61,51 @@ function Store({ store, relStores, simCat }) {
         }]
     }
 
+    const regex1 = /(.*[\s+\"\']faq_question[\s+\"\'].*)/g;
+    var questions = [];
+    var answers = [];
+    let m
+    while ((m = regex1.exec(store.extra_info)) !== null) {
+        // This is necessary to avoid infinite loops with zero-width matches
+        if (m.index === regex1.lastIndex) {
+            regex1.lastIndex++;
+        }
+
+        // The result can be accessed through the `m`-variable.
+        m.forEach((match, groupIndex) => {
+            if (groupIndex == 0)
+                questions.push(match.replace(/<[^>]+>/g, ''));
+        });
+    }
+    const regex2 = /(.*[\s+\"\']faq_answer[\s+\"\'].*)/g
+
+    while ((m = regex2.exec(store.extra_info)) !== null) {
+        // This is necessary to avoid infinite loops with zero-width matches
+        if (m.index === regex2.lastIndex) {
+            regex2.lastIndex++;
+        }
+
+        // The result can be accessed through the `m`-variable.
+        m.forEach((match, groupIndex) => {
+            if (groupIndex == 0)
+                answers.push(match.replace(/<[^>]+>/g, ''));
+        });
+    }
+
+    const jsonQD = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": questions.map((item, ind) => {
+            return {
+                "@type": "Question",
+                "name": item,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": answers[ind]
+                }
+            }
+        })
+    }
     return (
         <>
 
@@ -68,12 +113,15 @@ function Store({ store, relStores, simCat }) {
                 title={store.seo_title.replaceAll("%%Year%%", moment().format('YYYY')).replaceAll("%%CurrentMonth%%", moment().format('MMMM'))}
                 description={store.seo_description}
             />
-            {total_ratings > 0 &&
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-                />
-            }
+
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            {questions.length > 0 && <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonQD) }}
+            />}
             <section className="storePage">
                 <div className="container">
                     <div className="breadcrumb">
