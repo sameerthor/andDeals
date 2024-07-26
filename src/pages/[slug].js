@@ -410,16 +410,17 @@ function Store({ store, relStores, simCat }) {
 export async function getStaticProps({ params }) {
     const res = await fetch('https://backend.anddeals.com/stores/' + params.slug)
     var store = await res.json()
-    store.coupon_set.map(coupon => {
-        if (coupon.title.includes("$")) {
-            return coupon.title = "Best Deal";
-        }
-    });
     if (store.detail) {
         return {
             notFound: true
         };
     }
+    store.coupon_set.map(coupon => {
+        if (coupon.title.includes("$")) {
+            return coupon.title = "Best Deal";
+        }
+    });
+ 
     var simCat = [];
     if (store.category[0]) {
         const resRelStores = await fetch(`https://backend.anddeals.com/stores/?category__id=${store.category[0].id}&ordering=-id`)
