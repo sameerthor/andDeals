@@ -25,6 +25,10 @@ function Store({ store, relStores, simCat }) {
     store.store_description = store.store_description.replaceAll("%%storename%%", store.title);
     store.store_description = store.store_description.replaceAll("%pe­rcentage% off", store.coupon_set[0].title);
     store.store_description = store.store_description.replaceAll("%percentage% off", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%pe­rcentage% Off", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%percentage% Off", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%pe­rcentage% OFF", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%percentage% OFF", store.coupon_set[0].title);
     store.store_description = store.store_description.replaceAll("%pe­rcentage%", store.coupon_set[0].title);
     store.store_description = store.store_description.replaceAll("%percentage%", store.coupon_set[0].title);
     store.store_description = store.store_description.replace(/XX/, store.coupon_set.length);
