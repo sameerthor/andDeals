@@ -16,9 +16,9 @@ export default function App({ Component, pageProps }) {
   return (
     <main>
           <Head><style>{dom.css()}</style>
-          <GoogleAnalytics gaId="G-698D61F3M1" />
 
           </Head>
+          <GoogleAnalytics gaId="G-698D61F3M1" />
 
       <Header />
       <Component {...pageProps} />
