@@ -7,7 +7,7 @@ import { NextSeo } from "next-seo";
 export default function Categories({ categories }) {
     return (
         <>
-        <NextSeo
+            <NextSeo
                 title="Category - Anddeals"
                 description="Anddeals offers an extensive list of coupons and promo codes from top brands. Discover exclusive discount codes, free shipping offers, and unbeatable deals - all at one place. We are here to help you save money on everything you need."
             />
@@ -25,7 +25,7 @@ export default function Categories({ categories }) {
                                             </div>
                                             <div className="dealCount">
                                                 <span>
-                                                    {item.store_set.reduce((count, current) => count + current.coupon_set.filter(x => x.coupon_type == 'code').length, 0)} coupons <small>|</small> {item.store_set.reduce((count, current) => count + current.coupon_set.filter(x => x.coupon_type == 'deal').length, 0)} Deals
+                                                    {item.store_set.reduce((count, current) => count + current.coupon_set.filter(x => x.coupon_type == 'code').length, 0) > 0 && `${item.store_set.reduce((count, current) => count + current.coupon_set.filter(x => x.coupon_type == 'code').length, 0)} Coupons`}  {item.store_set.reduce((count, current) => count + current.coupon_set.filter(x => x.coupon_type == 'code').length, 0) > 0 && item.store_set.reduce((count, current) => count + current.coupon_set.filter(x => x.coupon_type == 'deal').length, 0) > 0 ? <small>|</small> : ''} {item.store_set.reduce((count, current) => count + current.coupon_set.filter(x => x.coupon_type == 'deal').length, 0) > 0 && `${item.store_set.reduce((count, current) => count + current.coupon_set.filter(x => x.coupon_type == 'deal').length, 0)} Deals`}
                                                 </span>
                                             </div>
                                         </Link>
@@ -88,7 +88,7 @@ export async function getStaticProps({ params }) {
 
     const res = await fetch(`https://backend.anddeals.com/categories?ordering=title`)
     const categories = await res.json()
-  
+
     return {
         props: {
             categories
