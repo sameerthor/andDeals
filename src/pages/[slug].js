@@ -242,7 +242,9 @@ function Store({ store, relStores, simCat }) {
                      <a href="#">Coupons (20)</a>
                      <a href="#">Deal (7)</a>
                   </div> */}
-                                {store.coupon_set && store.coupon_set.map((item, index) =>
+                                 {store.coupon_set.length>0 && store.coupon_set.sort(function (a, b) {
+                                     return a.coupon_type!==null?a.coupon_type.localeCompare(b.coupon_type):a;
+                                }).map((item, index) =>
                                     <Coupon key={index} store_data={_.omit(store, 'coupon_set')} coupon_data={item} />
                                 )}
 
