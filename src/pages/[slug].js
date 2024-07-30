@@ -114,7 +114,7 @@ function Store({ store, relStores, simCat }) {
         <>
 
             <NextSeo
-                title={store.seo_title.replaceAll("%%Year%%", moment().format('YYYY')).replaceAll("%%CurrentMonth%%", moment().format('MMMM'))}
+                title={store.seo_title.replaceAll("%%Year%%", moment().format('YYYY')).replaceAll("%%Year%%", moment().format('YYYY')).replaceAll("%%CurrentMonth%%", moment().format('MMMM'))}
                 description={store.seo_description}
             />
 
