@@ -114,7 +114,7 @@ function Store({ store, relStores, simCat }) {
         <>
 
             <NextSeo
-                title={store.seo_title.replaceAll("%%Year%%", moment().format('YYYY')).replaceAll("%%Year%%", moment().format('YYYY')).replaceAll("%%CurrentMonth%%", moment().format('MMMM'))}
+                title={store.seo_title.replaceAll("%%Year%%", moment().format('YYYY')).replaceAll("%%CurrentMonth%%", moment().format('MMMM'))}
                 description={store.seo_description}
             />
 
@@ -203,7 +203,7 @@ function Store({ store, relStores, simCat }) {
                         <div className="col-9 p-0">
                             <div>
                                 <h1 className="storeTitle">
-                                    {store.store_h1}
+                                    {store.store_h1.replaceAll("%%Year%%", moment().format('YYYY'))}
                                 </h1>
                                 <div className="avlDeals">
                                     <h2>{store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 && `${store.coupon_set.filter(x => x.coupon_type == 'code').length} Coupons`} {store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 && store.coupon_set.filter(x => x.coupon_type == 'deal').length > 0 ? "&" : ''} {store.coupon_set.filter(x => x.coupon_type == 'deal').length > 0 && `${store.coupon_set.filter(x => x.coupon_type == 'deal').length} Deals`} Available</h2>
