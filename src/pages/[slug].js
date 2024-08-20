@@ -25,6 +25,10 @@ function Store({ store, relStores, simCat }) {
     store.store_description = store.store_description.replaceAll("%%storename%%", store.title);
     store.store_description = store.store_description.replaceAll("%pe­rcentage% off", store.coupon_set[0].title);
     store.store_description = store.store_description.replaceAll("%percentage% off", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%pe­rcentage% Off", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%percentage% Off", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%pe­rcentage% OFF", store.coupon_set[0].title);
+    store.store_description = store.store_description.replaceAll("%percentage% OFF", store.coupon_set[0].title);
     store.store_description = store.store_description.replaceAll("%pe­rcentage%", store.coupon_set[0].title);
     store.store_description = store.store_description.replaceAll("%percentage%", store.coupon_set[0].title);
     store.store_description = store.store_description.replace(/XX/, store.coupon_set.length);
@@ -199,7 +203,7 @@ function Store({ store, relStores, simCat }) {
                         <div className="col-9 p-0">
                             <div>
                                 <h1 className="storeTitle">
-                                    {store.store_h1}
+                                    {store.store_h1.replaceAll("%%Year%%", moment().format('YYYY')).replaceAll("%%CurrentMonth%%", moment().format('MMMM'))}
                                 </h1>
                                 <div className="avlDeals">
                                     <h2>{store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 && `${store.coupon_set.filter(x => x.coupon_type == 'code').length} Coupons`} {store.coupon_set.filter(x => x.coupon_type == 'code').length > 0 && store.coupon_set.filter(x => x.coupon_type == 'deal').length > 0 ? "&" : ''} {store.coupon_set.filter(x => x.coupon_type == 'deal').length > 0 && `${store.coupon_set.filter(x => x.coupon_type == 'deal').length} Deals`} Available</h2>
@@ -238,7 +242,9 @@ function Store({ store, relStores, simCat }) {
                      <a href="#">Coupons (20)</a>
                      <a href="#">Deal (7)</a>
                   </div> */}
-                                {store.coupon_set && store.coupon_set.map((item, index) =>
+                                 {store.coupon_set.length>0 && store.coupon_set.sort(function (a, b) {
+                                     return a.coupon_type!==null?a.coupon_type.localeCompare(b.coupon_type):a;
+                                }).map((item, index) =>
                                     <Coupon key={index} store_data={_.omit(store, 'coupon_set')} coupon_data={item} />
                                 )}
 
