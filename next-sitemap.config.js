@@ -7,8 +7,7 @@ module.exports = {
         return {
             loc: path, // => this will be exported as http(s)://<config.siteUrl>/<path>
             changefreq: "daily",
-            priority:0.9,
-            lastmod: config.autoLastmod ? (new Date().toISOString().split('T'))[0] : undefined,
+            priority: 0.9
         }
     }
 }
