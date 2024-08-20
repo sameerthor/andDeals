@@ -1,5 +1,5 @@
 import {  useState } from 'react';
-import { Rating } from 'react-simple-star-rating';
+import { Rating } from 'react-simple-star-rating'
 
 export default function RatingBox({store}) {
     var store_rating = 0;
