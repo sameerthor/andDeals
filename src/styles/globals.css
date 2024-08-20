@@ -276,7 +276,7 @@ font-family: 'Montserrat', sans-serif;
     color: black;
     width: 400px;
     max-width: 100%;
-    top: 7%;
+    top: 50px;
 }
 .navbar.pageHeader input{
   width: 400px;
@@ -306,6 +306,14 @@ font-family: 'Montserrat', sans-serif;
   }
   .navbar.pageHeader input{
     width: 100%;
+  }
+  .react-search-box-dropdown{
+    left: 0;
+    right: 0;
+    max-width: 98%;
+    margin: auto !important;
+    top: 190px;
+    
   }
 }
 @media(max-width: 600px){
