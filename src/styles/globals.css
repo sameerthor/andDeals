@@ -271,13 +271,16 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .react-search-box-dropdown{
-  z-index: 99999 !important;
-    position: fixed;
-    color: black;
-    width: 400px;
-    max-width: 100%;
-    top: 50px;
+    react-search-box-dropdown {
+      left: 0;
+      right: 0;
+      margin: auto !important;
+      top: 190px;
+      width: 95% !important;
+      overflow: hidden;
+  }
 }
+
 .navbar.pageHeader input{
   width: 400px;
   max-width: 100%;
