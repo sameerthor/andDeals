@@ -270,15 +270,16 @@ font-family: 'Montserrat', sans-serif;
  display: inline-block;
 }
 
-.react-search-box-dropdown{
-    react-search-box-dropdown {
-      left: 0;
-      right: 0;
-      margin: auto !important;
-      top: 190px;
-      width: 95% !important;
-      overflow: hidden;
-  }
+.react-search-box-dropdown {
+  z-index: 99;
+  right: 70px;
+  position: absolute;
+  top: 60px;
+  width: 400px;
+  margin: auto !important;
+}
+.react-search-box-dropdown ul li{
+ color: #000;
 }
 
 .navbar.pageHeader input{
@@ -304,18 +305,15 @@ font-family: 'Montserrat', sans-serif;
 }
 
 @media(max-width: 991px){
-  .react-search-box-dropdown{
-      width: 100%;
-  }
   .navbar.pageHeader input{
     width: 100%;
   }
   .react-search-box-dropdown{
     left: 0;
     right: 0;
-    max-width: 98%;
     margin: auto !important;
     top: 190px;
+    width: 95% !important;
     
   }
 }
