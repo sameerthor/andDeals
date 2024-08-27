@@ -32,7 +32,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-responsive-carousel": "^3.2.23",
-    "react-search-box": "^2.3.0",
+    "react-search-box": "^3.0.0",
     "react-simple-star-rating": "^5.1.7",
     "react-string-replace": "^1.1.1",
     "sharp": "^0.33.4",
