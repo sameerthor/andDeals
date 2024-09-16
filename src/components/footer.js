@@ -120,7 +120,7 @@ export default function Footer() {
                         <p className="lovetext">
                             © 2024 <a href="/" title="anddeals.com">andDeals.com</a> Made in London with love ❤️.
                             andDeals is operated by andDeals IT Desk a company registered in the
-                            United Kingdom. Company No: 08532926. 
+                            United Kingdom.
                         </p>
                         <p className="amznAffi">
                             Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its
